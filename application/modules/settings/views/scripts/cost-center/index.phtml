@@ -1,0 +1,194 @@
+<div class="row">
+    <div class="column">
+        <div class="ui breadcrumb">
+            <a class="section" href="/account/dashboard">Início</a>
+            <div class="divider"> / </div>
+            <div class="active section"><?php echo $this->title_page ?></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segment">
+            <table class="ui celled selectable table" id="onTableCostCenter">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalCreate">
+    <div class="header">Novo Registro</div>
+    <div class="content">
+        <form class="ui equal width form">
+            <div class="fields">
+                <div class="field required">
+                    <label>Descrição</label>
+                    <input type="text" name="name_cost_center" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Icon</label>
+                    <div class="ui fluid selection dropdown on-icon-cost-dropdown">
+                        <input type="hidden" name="icon_cost_center">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Selecione...</div>
+                        <div class="menu">
+                            <div class="item" data-value="clipboard check">
+                                <i class="clipboard check icon"></i>
+                            </div>
+                            <div class="item" data-value="utensils">
+                                <i class="utensils icon"></i>
+                            </div>
+                            <div class="item" data-value="pencil alternate">
+                                <i class="pencil alternate icon"></i>
+                            </div>
+                            <div class="item" data-value="minus">
+                                <i class="minus icon"></i>
+                            </div>
+                            <div class="item" data-value="file">
+                                <i class="file icon"></i>
+                            </div>
+                            <div class="item" data-value="chart line">
+                                <i class="chart line icon"></i>
+                            </div>
+                            <div class="item" data-value="gamepad">
+                                <i class="gamepad icon"></i>
+                            </div>
+                            <div class="item" data-value="shopping cart">
+                                <i class="shopping cart icon"></i>
+                            </div>
+                            <div class="item" data-value="home">
+                                <i class="home icon"></i>
+                            </div>
+                            <div class="item" data-value="shopping cart">
+                                <i class="ellipsis horizontal icon"></i>
+                            </div>
+                            <div class="item" data-value="paw">
+                                <i class="paw icon"></i>
+                            </div>
+                            <div class="item" data-value="gift">
+                                <i class="gift icon"></i>
+                            </div>
+                            <div class="item" data-value="shopping bag">
+                                <i class="shopping bag icon"></i>
+                            </div>
+                            <div class="item" data-value="stethoscope">
+                                <i class="stethoscope icon"></i>
+                            </div>
+                            <div class="item" data-value="briefcase">
+                                <i class="briefcase icon"></i>
+                            </div>
+                            <div class="item" data-value="car">
+                                <i class="car icon"></i>
+                            </div>
+                            <div class="item" data-value="plane">
+                                <i class="plane icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field required">
+                    <label>Cor</label>
+                    <input type="color" name="color_cost_center" />                            
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Cancelar</button>
+        <button class="ui labeled icon primary ok button"><i class="check icon"></i> Salvar</button>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalUpdate">
+    <div class="header">Atualizar Registro</div>
+    <div class="content">
+        <form class="ui equal width form">
+            <div class="fields">
+                <div class="field required">
+                    <label>Descrição</label>
+                    <input type="text" name="name_cost_center" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Icon</label>
+                    <div class="ui fluid selection dropdown on-icon-cost-dropdown">
+                        <input type="hidden" name="icon_cost_center">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Selecione...</div>
+                        <div class="menu">
+                            <div class="item" data-value="clipboard check">
+                                <i class="clipboard check icon"></i>
+                            </div>
+                            <div class="item" data-value="utensils">
+                                <i class="utensils icon"></i>
+                            </div>
+                            <div class="item" data-value="pencil alternate">
+                                <i class="pencil alternate icon"></i>
+                            </div>
+                            <div class="item" data-value="minus">
+                                <i class="minus icon"></i>
+                            </div>
+                            <div class="item" data-value="file">
+                                <i class="file icon"></i>
+                            </div>
+                            <div class="item" data-value="chart line">
+                                <i class="chart line icon"></i>
+                            </div>
+                            <div class="item" data-value="gamepad">
+                                <i class="gamepad icon"></i>
+                            </div>
+                            <div class="item" data-value="shopping cart">
+                                <i class="shopping cart icon"></i>
+                            </div>
+                            <div class="item" data-value="home">
+                                <i class="home icon"></i>
+                            </div>
+                            <div class="item" data-value="shopping cart">
+                                <i class="ellipsis horizontal icon"></i>
+                            </div>
+                            <div class="item" data-value="paw">
+                                <i class="paw icon"></i>
+                            </div>
+                            <div class="item" data-value="gift">
+                                <i class="gift icon"></i>
+                            </div>
+                            <div class="item" data-value="shopping bag">
+                                <i class="shopping bag icon"></i>
+                            </div>
+                            <div class="item" data-value="stethoscope">
+                                <i class="stethoscope icon"></i>
+                            </div>
+                            <div class="item" data-value="briefcase">
+                                <i class="briefcase icon"></i>
+                            </div>
+                            <div class="item" data-value="car">
+                                <i class="car icon"></i>
+                            </div>
+                            <div class="item" data-value="plane">
+                                <i class="plane icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field required">
+                    <label>Cor</label>
+                    <input type="color" name="color_cost_center" />                            
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Cancelar</button>
+        <button class="ui labeled icon primary ok button"><i class="check icon"></i> Salvar</button>
+    </div>
+</div>

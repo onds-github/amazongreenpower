@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="column">
+        <div class="ui breadcrumb">
+            <a class="section" href="/account/dashboard">Início</a>
+            <div class="divider"> / </div>
+            <a class="section" href="/account/contact">Ordem de serviços</a>
+            <div class="divider"> / </div>
+            <div class="active section"><?php echo $this->title_page ?></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segment">
+            <form class="ui equal width form">
+                <div class="fields">
+                    <div class="four wide field required">
+                        <label>Ref. OS</label>
+                        <input type="text" name="document_contact" class="on-mask-document" />
+                    </div>
+                    <div class="field required">
+                        <label>Descrição</label>
+                        <input type="text" name="document_contact" class="on-mask-document" />
+                    </div>
+                    <div class="four wide field">
+                        <label>Situação</label>
+                        <select class="ui dropdown" name="client_contact">
+                            <option value="1">Solicitação</option>
+                            <option value="2">Orçamento</option>
+                            <option value="3">Venda</option>
+                            <option value="4">Execução</option>
+                            <option value="5">Finalizado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fields">
+                    <div class="field required">
+                        <label>Cliente</label>
+                        <input type="text" name="name_contact" />
+                    </div>
+                    <div class="field">
+                        <label>Data (Início)</label>
+                        <input type="text" name="email_contact" />
+                    </div>
+                    <div class="field">
+                        <label>Data (Validade)</label>
+                        <input type="text" name="phone_primary_contact" class="on-mask-phone" />
+                    </div>
+                    <div class="field">
+                        <label>Data (Previsão)</label>
+                        <input type="text" name="phone_primary_contact" class="on-mask-phone" />
+                    </div>
+                </div>
+                <div class="fields">
+                    <div class="field">
+                        <label>Observação</label>
+                        <textarea name="observation_contact" rows="4"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui pointing menu">
+            <a class="active item">
+                Serviços
+            </a>
+            <a class="item">
+                Trabalhadores
+            </a>
+            <a class="item">
+                Lançamentos
+            </a>
+        </div>
+        <div class="ui segment">
+            <table class="ui celled selectable table" id="onTableOrder">
+                <thead>
+                    <tr>
+                        <th class="select-checkbox"></th>
+                        <th>Serviços.</th>
+                        <th>Quantidade</th>
+                        <th>Preço Unit.</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<form class="ui form on-form-file" style="display: none">
+    <div class="field">
+        <input type="file" name="file" />
+    </div>
+</form>
+

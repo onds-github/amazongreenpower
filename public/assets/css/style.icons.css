@@ -1,0 +1,15 @@
+.on-icons {
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    background-position: center !important;
+    width: 18px !important;
+    height: 18px !important;
+}
+
+.on-thumbs-up {
+    background-image: url(../icons/thumbs-up-solid.svg);
+}
+
+.on-thumbs-down {
+    background-image: url(../icons/thumbs-down-solid.svg);
+}

@@ -1,0 +1,123 @@
+<div class="row">
+    <div class="column">
+        <div class="ui breadcrumb">
+            <a class="section" href="/account/dashboard">Início</a>
+            <div class="divider"> / </div>
+            <div class="active section"><?php echo $this->title_page ?></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segments" id="onCardFilter">
+            <div class="ui right aligned segment">
+                <button class="ui <?php echo Zend_Auth::getInstance()->getIdentity()->filter_toggle == 1 ? '' : 'black' ?> icon labeled button uk-float-right" id="onButtonFilter"><?php echo Zend_Auth::getInstance()->getIdentity()->filter_toggle == 1 ? '<i class="eye slash icon"></i> Ocultar' : '<i class="eye icon"></i> Mostrar' ?></button>
+            </div>
+            <div class="ui segment uk-card-body" <?php echo Zend_Auth::getInstance()->getIdentity()->filter_toggle == 1 ? '' : 'style="display:none"' ?>>
+                <form class="ui equal width form" id="onFormFilter">
+                    <div class="fields">
+                        <div class="field">
+                            <label>Conta</label>
+                            <div class="ui search selection fluid dropdown on-dropdown-account">
+                                <input type="hidden" name="filter_conciliation_id_account" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_conciliation_id_account ?>" />
+                                <i class="dropdown icon"></i>
+                                <input type="text" class="search" tabindex="0" />
+                                <span class="sizer"></span>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu" tabindex="-1"></div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Período (De)</label>
+                            <input type="date" name="filter_conciliation_period_min" id="filterPeriodMin" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_conciliation_period_min ?>" />
+                        </div>
+                        <div class="field">
+                            <label>Período (Até)</label>
+                            <input type="date" name="filter_conciliation_period_max" id="filterPeriodMax" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_conciliation_period_max ?>" />
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="field right aligned">
+                            <button class="ui primary button" type="submit">Filtrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segment">
+            <div class="ui grid">
+                <div class="row">
+                    <div class="eight wide column">
+
+                        <form class="ui equal width form" id="onFormOrderConciliation">
+                            <div class="fields">
+                                <div class="field">
+                                    <label>Entrada</label>
+                                    <input type="text" id="sumInConciliation" value="0,00" readonly />
+                                </div>
+                                <div class="field">
+                                    <label>Saída</label>
+                                    <input type="text" id="sumOutConciliation" value="0,00" readonly />
+                                </div>
+                            </div>
+                        </form>
+                        <hr />
+                        <table class="ui celled selectable table" id="onTableOrderConciliation">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Data</th>
+                                    <th>Descrição</th>
+                                    <th>Valor</th>
+                                </tr>
+
+                            </thead>
+                        </table>
+
+                    </div>
+                    <div class="eight wide column">
+
+                        <form class="ui equal width form" id="onFormOrder">
+                            <div class="fields">
+                                <div class="field">
+                                    <label>Entrada</label>
+                                    <input type="text" id="sumInOrder" value="0,00" readonly />
+                                </div>
+                                <div class="field">
+                                    <label>Saída</label>
+                                    <input type="text" id="sumOutOrder" value="0,00" readonly />
+                                </div>
+                            </div>
+                        </form>
+                        <hr />
+                        <table class="ui celled selectable table" id="onTableOrder">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Data</th>
+                                    <th>Descrição</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<form class="ui form on-form-file" style="display: none">
+    <div class="field">
+        <input type="file" name="file" />
+    </div>
+</form>
+
+

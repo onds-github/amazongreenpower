@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="column">
+        <div class="ui breadcrumb">
+            <a class="section" href="/account/dashboard">Início</a>
+            <div class="divider"> / </div>
+            <div class="active section"><?php echo $this->title_page ?></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segment">
+            <table class="ui celled selectable table" id="onTableUsers">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Telefone</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalCreate">
+    <div class="header">Novo Registro</div>
+    <div class="content">
+        <form class="ui equal width form on-form-insert">
+            <div class="fields">
+                <div class="field required">
+                    <label>Nome</label>
+                    <input type="text" name="name_user" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>E-mail</label>
+                    <input type="text" name="email_user" />
+                </div>
+                <div class="field required">
+                    <label>Telefone</label>
+                    <input type="text" name="phone_user" class="on-mask-phone" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Cancelar</button>
+        <button class="ui labeled icon primary ok button"><i class="check icon"></i> Salvar</button>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalUpdate">
+    <div class="header">Atualizar Registro</div>
+    <div class="content">
+        <form class="ui equal width form on-form-insert">
+            <div class="fields">
+                <div class="field required">
+                    <label>Nome</label>
+                    <input type="text" name="name_user" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>E-mail</label>
+                    <input type="text" name="email_user" />
+                </div>
+                <div class="field required">
+                    <label>Telefone</label>
+                    <input type="text" name="phone_user" class="on-mask-phone" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Cancelar</button>
+        <button class="ui labeled icon primary ok button"><i class="check icon"></i> Salvar</button>
+    </div>
+</div>

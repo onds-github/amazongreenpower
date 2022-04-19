@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="column">
+        <div class="ui breadcrumb">
+            <a class="section" href="/account/dashboard">Início</a>
+            <div class="divider"> / </div>
+            <div class="active section"><?php echo $this->title_page ?></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segment">
+            <table class="ui celled selectable table" id="onTableTransfer">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Descrição</th>
+                        <th>Conta Saída</th>
+                        <th>Conta Entrada</th>
+                        <th>Data</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalCreate">
+    <div class="header">Transferência entre contas</div>
+    <div class="content">
+        <form class="ui equal width form on-form-transfer">
+            <div class="fields">
+                <div class="field required">
+                    <label>Descrição</label>
+                    <input type="text" name="description_order" placeholder="Informe..." />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Conta Saída</label>
+                    <div class="ui search selection dropdown on-dropdown-account-out">
+                        <input type="hidden" name="id_account_out">
+                        <i class="dropdown icon"></i>
+                        <input type="text" class="search" tabindex="0" />
+                        <span class="sizer"></span>
+                        <div class="default text">Selecione...</div>
+                        <div class="menu" tabindex="-1"></div>
+                    </div>
+                </div>
+                <div class="field required">
+                    <label>Conta Entrada</label>
+                    <div class="ui search selection dropdown on-dropdown-account-in">
+                        <input type="hidden" name="id_account_in">
+                        <i class="dropdown icon"></i>
+                        <input type="text" class="search" tabindex="0" />
+                        <span class="sizer"></span>
+                        <div class="default text">Selecione...</div>
+                        <div class="menu" tabindex="-1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Data</label>
+                    <input type="date" name="date_due_order" />
+                </div>
+                <div class="field required">
+                    <label>Valor</label>
+                    <input type="text" name="price_order" placeholder="Informe..." class="on-mask-money" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Cancelar</button>
+        <button class="ui labeled icon primary ok button"><i class="check icon"></i> Salvar</button>
+    </div>
+</div>

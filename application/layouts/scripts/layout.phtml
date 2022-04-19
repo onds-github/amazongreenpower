@@ -1,0 +1,42 @@
+<?php echo $this->doctype('HTML5') ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR">
+    <head>
+        <?php
+        echo $this->headTitle($this->title_page);
+
+        echo $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1')
+                ->setHttpEquiv('Content-Type', 'text/html;charset=UTF-8')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+                ->appendHttpEquiv('language', 'pt-BR')
+                ->appendName('robots', 'noindex, nofollow');
+
+        echo $this->headLink()
+                ->appendStylesheet('/public/assets/css/style.default.css?v=' . time())
+                ->prependStylesheet('/public/assets/addons/uikit/css/uikit.min.css')
+                ->prependStylesheet('/public/assets/semantic/semantic.min.css');
+        ?>
+    </head>
+    <body>
+
+        <?php echo $this->layout()->content; ?>
+
+
+        <?php
+        echo $this->headScript()
+                ->prependFile('/public/library/numeral/pt-br.js')
+                ->prependFile('/public/library/numeral/script.js')
+                ->prependFile('/public/library/moment/default-locales.js')
+                ->prependFile('/public/library/moment/default.js')
+                ->prependFile('/public/library/contextmenu/default.js')
+                
+                ->prependFile('/public/assets/addons/uikit/js/uikit-icons.min.js')
+                ->prependFile('/public/assets/addons/uikit/js/uikit.min.js')
+                ->prependFile('/public/assets/semantic/semantic.min.js')
+                ->prependFile('/public/config/default.js')
+                ->prependFile('/public/library/mask/jquery.mask.min.js')
+                ->prependFile('/public/library/jquery/jquery.min.js');
+        ?>
+        
+    </body>
+</html>

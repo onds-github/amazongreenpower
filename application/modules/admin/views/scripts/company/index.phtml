@@ -1,0 +1,113 @@
+<div class="row">
+    <div class="column">
+        <div class="ui breadcrumb">
+            <a class="section" href="/account/dashboard">Início</a>
+            <div class="divider"> / </div>
+            <div class="active section"><?php echo $this->title_page ?></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segment">
+            <table class="ui celled selectable table" id="onTableCompany">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Apelido / Nome Fantasia</th>
+                        <th>CPF / CNPJ</th>
+                        <th>Telefone</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalCreate">
+    <div class="header">Novo registro</div>
+    <div class="content">
+        <form class="ui equal width form">
+            <div class="fields">
+                <div class="field required">
+                    <label class="on-label-document-company">Documento (CPF/CNPJ)</label>
+                    <input type="text" name="document_company" class="on-mask-document" />
+                </div>
+                <div class="field required">
+                    <label class="on-label-document-company">Telefone</label>
+                    <input type="text" name="phone_primary_company" class="on-mask-phone" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label class="on-label-nickname-company">Apelido / Nome Fantasia</label>
+                    <input type="text" name="nickname_company" />
+                </div>
+                <div class="field required">
+                    <label class="on-label-name-company">Nome completo / Razão Social</label>
+                    <input type="text" name="name_company" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Status</label>
+                    <select class="ui dropdown" name="status_company">
+                        <option value="1">Ativo</option>
+                        <option value="0">Bloqueado</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon small secondary deny button"><i class="ui close icon"></i> Cancelar</button>
+        <button class="ui right labeled icon small primary ok button"><i class="ui save icon"></i> Salvar</button>
+    </div>
+</div>
+
+
+<div class="ui small modal" id="onModalUpdate">
+    <div class="header">
+        <h4 class="uk-h4">Atualizar registro</h4>
+    </div>
+    <div class="content">
+        <form class="ui equal width form">
+            <div class="fields">
+                <div class="field required">
+                    <label class="on-label-document-company">Documento (CPF/CNPJ)</label>
+                    <input type="text" name="document_company" class="on-mask-document" />
+                </div>
+                <div class="field required">
+                    <label class="on-label-document-company">Telefone</label>
+                    <input type="text" name="phone_primary_company" class="on-mask-phone" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label class="on-label-nickname-company">Apelido / Nome Fantasia</label>
+                    <input type="text" name="nickname_company" />
+                </div>
+                <div class="field required">
+                    <label class="on-label-name-company">Nome completo / Razão Social</label>
+                    <input type="text" name="name_company" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Status</label>
+                    <select class="ui dropdown" name="status_company">
+                        <option value="1">Ativo</option>
+                        <option value="0">Bloqueado</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon small secondary deny button"><i class="ui close icon"></i> Cancelar</button>
+        <button class="ui right labeled icon small primary ok button"><i class="ui save icon"></i> Salvar</button>
+    </div>
+</div>

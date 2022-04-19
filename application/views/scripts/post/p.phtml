@@ -1,0 +1,125 @@
+<?php
+Zend_Loader::loadClass("Post");
+$model = new Post();
+$result = $model->selectTablePublic($_GET['q'])[0];
+?>
+
+<div class="hero sub">
+    <div class="container">
+        <div class="hero-title-flex _100">
+            <h1 data-w-id="9fba573d-9cf5-f8ed-2cb7-15468e0ee215" style="opacity:0" class="display-1 center for-blog"><?php echo $result['title_post'] ?></h1>
+        </div>
+        <div class="margin-20px">
+            <div class="we-are-grid">
+                <div>
+                    <p data-w-id="9fba573d-9cf5-f8ed-2cb7-15468e0ee21d" style="opacity:0" class="subhead gray"><?php echo date('F j, Y', strtotime($result['date_post'])) ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-w-id="9fba573d-9cf5-f8ed-2cb7-15468e0ee221" style="opacity:0" class="flex-lottie">
+        <a href="#" data-w-id="9fba573d-9cf5-f8ed-2cb7-15468e0ee222" class="social-icon down w-inline-block">
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+            <div data-w-id="9fba573d-9cf5-f8ed-2cb7-15468e0ee224" data-animation-type="lottie" data-src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/6140714b1d7189d6391ea9fc_icons8-down.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="1.1666666666666667" data-duration="0" class="animation-image _4"></div>
+        </a>
+    </div>
+    <div class="social-wrapper left">
+        <a data-w-id="9fba573d-9cf5-f8ed-2cb7-15468e0ee226" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e584debc11e0c9d4225_facebook.png" loading="lazy" width="20" alt="" class="animation-image"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+        <a data-w-id="9fba573d-9cf5-f8ed-2cb7-15468e0ee229" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e58412b62ca34cd5219_twitter.png" loading="lazy" width="20" alt="" class="animation-image"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+        <a data-w-id="9fba573d-9cf5-f8ed-2cb7-15468e0ee22c" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e5874d7a635ad9ecf31_instagram.png" loading="lazy" width="20" alt="" class="animation-image"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+        <a data-w-id="9fba573d-9cf5-f8ed-2cb7-15468e0ee22f" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e583ff4391b0bc9191c_linkedin.png" loading="lazy" width="20" alt="" class="animation-image _2"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+    </div>
+</div>
+<div id="down" class="section wf-section">
+    <div class="container">
+        <div class="blog-page-content">
+            <div class="photo-animation blog-page">
+                <img src="<?php echo $result['image_post'] ?>" loading="lazy" alt="" sizes="(max-width: 991px) 90vw, 620px" class="photo"/>
+                <div class="absolute-background"></div>
+            </div>
+            <div class="margin-30px">
+                <div class="margin-30px">
+                    <div data-w-id="728a0758-a0d6-4e53-4340-0441bf656fcf" style="opacity:0" class="w-richtext">
+<?php echo $result['description_long_post'] ?>
+                    </div>
+                </div>
+            </div>
+            <div data-w-id="728a0758-a0d6-4e53-4340-0441bf656fd0" style="opacity:0" class="margin-30px">
+                <div data-w-id="3f680fca-b7b6-6399-b9b9-3b167a29d180" style="opacity:0" class="margin-20px">
+                    <a href="/blog" class="button-liner w-inline-block">
+                        <div>
+                            <div>Back To Blog</div>
+                            <div class="button-line">
+                                <div class="button-line-absolute"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="margin-100px">
+            <div class="max-w-width">
+                <h3 data-w-id="b09a6821-6073-b0b7-38d2-c84d31124518" style="opacity:0">Related Post</h3>
+            </div>
+            <div class="margin-70px">
+                <div class="w-dyn-list">
+                    <div role="list" class="blog-grid w-dyn-items">
+<?php
+foreach ($model->selectTableLast() as $value) {
+    echo ' <div role="listitem" class="w-dyn-item">
+                                    <a data-w-id="b009e533-347e-9a12-c396-2189a4e2c2d2" style="opacity:1" href="/post/p/?q=' . $value['slug_post'] . '" class="blog-link w-inline-block">
+                                        <div class="button-flex left">
+                                            <p class="category-text">' . date('F j, Y', strtotime($value['date_post'])) . '</p>
+                                            <div class="horizontal-divider _15px"></div>
+                                            <p class="category-text">' . $value['name_category'] . '</p>
+                                        </div>
+                                        <div class="blog-text">' . $value['title_post'] . '</div>
+                                        <img src="' . $value['image_post'] . '" loading="lazy" data-w-id="b009e533-347e-9a12-c396-2189a4e2c2d5" alt="" class="blog-image"/>
+                                        <div class="margin-15px">
+                                            <p class="project-summary w-dyn-bind-empty"></p>
+                                        </div>
+                                        <div class="margin-20px">
+                                            <div class="button-liner">
+                                                <div>
+                                                    <div data-w-id="9a4f0b68-5b2c-c2dd-7133-b7784f087f40">Read More</div>
+                                                    <div class="button-line">
+                                                        <div class="button-line-absolute"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>';
+}
+?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-w-id="663e623e-5ba0-a931-aa30-38ba1c34f4ab" class="section take-off wf-section">
+    <div class="container">
+        <div class="max-w-width center">
+            <div>
+                <h1 data-w-id="663e623e-5ba0-a931-aa30-38ba1c34f4af" class="display-2">Ready to<span class="title-line _2"> take off?</span></h1>
+            </div>
+        </div>
+    </div>
+    <a href="/contact" class="project-circle black w-inline-block">
+        <div data-w-id="663e623e-5ba0-a931-aa30-38ba1c34f4b4" data-animation-type="lottie" data-src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/614461c3fedaa051c5810cd1_icons8-rocket-384.png" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-duration="0"></div>
+        <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/6144651fafc60da397af27f5_icons8-rocket-192.png" loading="lazy" alt="" class="lottie-animation right _2"/>
+    </a>
+</div>

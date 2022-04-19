@@ -1,0 +1,52 @@
+<?php echo $this->doctype('HTML5') ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110302100-11"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-110302100-11');
+        </script>
+
+
+        <?php
+        echo $this->headTitle($this->title);
+
+        echo $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1')
+                ->setHttpEquiv('Content-Type', 'text/html;charset=UTF-8')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+                ->appendHttpEquiv('language', 'pt-BR')
+                ->appendHttpEquiv('Author', 'Department web')
+                ->appendHttpEquiv('reply-to', 'suporte@onds.com.br')
+                ->appendName('robots', 'index, follow')
+                ->appendName('description', 'Consultoria e Contabilidade');
+
+        echo $this->headLink()
+                ->prependStylesheet($this->baseUrl('public/modules/application/css/default.css'))
+                ->prependStylesheet($this->baseUrl('public/library/getuikit/css/uikit.min.css'))
+                ->prependStylesheet($this->baseUrl('public/library/semantic/semantic.min.css'));
+        ?>
+
+    </head>
+    <body>
+
+
+                        <?php echo $this->layout()->content; ?>
+
+        <?php
+        echo $this->headScript()
+                ->prependFile($this->baseUrl('public/library/getuikit/js/uikit.icon.min.js'))
+                ->prependFile($this->baseUrl('public/library/getuikit/js/uikit.min.js'))
+                ->prependFile($this->baseUrl('public/library/semantic/semantic.min.js'))
+                ->prependFile($this->baseUrl('public/config/default.js'))
+                ->prependFile($this->baseUrl('public/library/jquery/jquery.js'));
+        ?>
+
+    </body>
+</html>

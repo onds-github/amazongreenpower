@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="column">
+        <div class="ui breadcrumb">
+            <a class="section" href="/account/dashboard">Início</a>
+            <div class="divider"> / </div>
+            <div class="active section"><?php echo $this->title_page ?></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui mobile reversed grid">
+            <div class="row">
+                <div class="twelve wide column">
+                    <div class="ui segment">
+                        <form class="ui equal width form on-form-user" autocomplete="off">
+                            <div class="fields">
+                                <div class="field required">
+                                    <label>Nome</label>
+                                    <input type="text" name="name_user" />
+                                </div>
+                            </div>
+                            <div class="fields">
+                                <div class="field">
+                                    <label>E-mail</label>
+                                    <input type="text" name="email_user" />
+                                </div>
+                                <div class="field">
+                                    <label>Telefone</label>
+                                    <input type="text" name="phone_user" class="on-mask-phone" />
+                                </div>
+                            </div>
+                            <hr class="ui divider" />
+                            <div class="fields">
+                                <div class="field">
+                                    <button class="ui primary disabled button">Salvar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="ui segment">
+                        <form class="ui equal width form on-form-security">
+                            <div class="fields">
+                                <div class="field">
+                                    <label>Nova senha</label>
+                                    <input type="password" name="password_user" />
+                                </div>
+                                <div class="field">
+                                    <label>Confirmar senha</label>
+                                    <input type="password" name="cpassword_user" />
+                                </div>
+                            </div>
+                            <hr class="ui divider" />
+                            <div class="fields">
+                                <div class="field">
+                                    <button class="ui primary disabled button">Salvar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <div class="ui segment">
+                        <img class="ui centered circular image image_user" src="https://img.icons8.com/pastel-glyph/64/000000/name.png" alt="Imagem do contato"/>
+                        <div class="ui divider"></div>
+                        <input type="file" name="image_user" class="on-filepond" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

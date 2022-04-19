@@ -1,0 +1,40 @@
+<section class="uk-section uk-section-muted uk-padding-remove on-background-register">
+    <div class="" uk-grid>
+        <div class="uk-width-large@s uk-background-default" uk-height-viewport>
+            <div class="uk-card uk-card-body uk-card-muted">
+                <img class="uk-margin-bottom" width="250" src="<?php echo $this->baseUrl('public/modules/default/img/brand/logotipo.png') ?>" alt="logotipo" />
+                <form class="ui form on-form-register">
+                    <div class="field required">
+                        <label>Nome</label>
+                        <input type="text" name="name" placeholder="Nome completo" />
+                    </div>
+                    <div class="field required">
+                        <label>E-mail</label>
+                        <input type="text" name="email" placeholder="nome@provedor.com.br" />
+                    </div>
+                    <div class="field required">
+                        <label>Senha</label>
+                        <input type="password" name="password" placeholder="******" />
+                    </div>
+                    <div class="inline field required">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="terms" />
+                            <label>Eu aceito os <a class="uk-link" target="_blank" href="<?php echo $this->baseUrl('help/terms') ?>">termos de uso</a>.</label>
+                        </div>
+                    </div>
+                    <div class="ui error message"></div>   
+                    <button class="uk-button uk-button-primary">Cadastrar <i class="uk-margin-left" uk-icon="icon: arrow-right"></i></button>
+                </form>   
+            </div>
+        </div>
+        <div class="uk-width-expand@s uk-overlay-primary">
+            <div class="uk-card uk-card-body uk-card-muted uk-margin-large-top">
+                    <h1 class="uk-h1 uk-margin-remove-bottom">Cadastre-se</h1>
+                    <p class="uk-text-lead uk-margin-remove-top">Para ter acesso aos nossos <strong>cursos online</strong></p>
+                    <hr class="uk-divider-small" />
+                    <p class="uk-text-meta">Já possui uma conta? <a href="<?php echo $this->baseUrl('account/access') ?>" class="uk-link">Fazer login</a></p>
+                    <a href="<?php echo $this->baseUrl('/') ?>" class="uk-link">Voltar para início</a>
+            </div>
+        </div>
+    </div>
+</section>

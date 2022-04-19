@@ -1,0 +1,291 @@
+<?php echo $this->doctype('HTML5') ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110302100-11"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-110302100-11');
+        </script>
+
+
+        <?php
+        echo $this->headTitle($this->title);
+
+        echo $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1')
+                ->setHttpEquiv('Content-Type', 'text/html;charset=UTF-8')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+                ->appendHttpEquiv('language', 'pt-BR')
+                ->appendHttpEquiv('Author', 'Department web')
+                ->appendHttpEquiv('reply-to', 'suporte@onds.com.br')
+                ->appendName('robots', 'index, follow')
+                ->appendName('description', 'Consultoria e Contabilidade');
+
+        echo $this->headLink()
+                ->prependStylesheet($this->baseUrl('public/modules/application/css/default.css'))
+                ->prependStylesheet($this->baseUrl('public/library/getuikit/css/uikit.min.css'))
+                ->prependStylesheet($this->baseUrl('public/library/semantic/semantic.min.css'));
+        ?>
+
+    </head>
+    <body>
+
+
+        <div class="uk-offcanvas-content">
+
+            <!--offcanvas-menu-->
+            <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true; flip: true" class="uk-offcanvas">
+                <div class="uk-offcanvas-bar">
+                    <button class="uk-offcanvas-close uk-close uk-icon" type="button" uk-close=""><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" ratio="1"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+                    <ul class="uk-nav-default uk-nav-parent-icon uk-nav" uk-nav="">
+                        <li><a href="<?php echo $this->baseUrl('/') ?>">INÍCIO</a></li>
+                        <li><a href="<?php echo $this->baseUrl('sobre') ?>">A EMPRESA</a></li>
+                        <li>
+                            <a href="<?php echo $this->baseUrl('produto') ?>">SISTEMAS</a>
+                            <ul class="uk-nav-sub">
+                                <li><a href="<?php echo $this->baseUrl('produto/icom') ?>">ICOM</a></li>
+                                <li><a href="<?php echo $this->baseUrl('produto/safc') ?>">SAFC</a></li>
+                                <li><a href="<?php echo $this->baseUrl('produto/sigs') ?>">SIGS</a></li>
+                                <li class="uk-nav-divider"></li>
+                                <li><a href="<?php echo $this->baseUrl('produto/siscopesca') ?>">SISCOPESCA</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="<?php echo $this->baseUrl('servico') ?>">SERVIÇOS</a>
+                            <ul class="uk-nav-sub">
+                                <li class="uk-nav-header">FABRICAÇÃO</li>
+                                <li><a href="<?php echo $this->baseUrl('servico/fabricacaogelo') ?>">FABRICAÇÃO DE GELO</a></li>
+                                <li class="uk-nav-header">INST. E MANUTENÇÃO</li>
+                                <li><a href="<?php echo $this->baseUrl('servico/energiasolar') ?>">ENERGIA SOLAR</a></li>
+                                <li><a href="<?php echo $this->baseUrl('servico/redeeletrica') ?>">REDE ELÉTRICA</a></li>
+                                <li><a href="<?php echo $this->baseUrl('servico/ventilacaoeresfriacao') ?>">VENTILAÇÃO E RESFRIAÇÃO</a></li>
+                                <li><a href="<?php echo $this->baseUrl('servico/portasjanelasdivisorias') ?>">PORTAS, JANELAS, DIVISÓRIAS...</a></li>
+                            </ul>
+                            <ul class="uk-nav-sub">
+                                <li class="uk-nav-header">CONSTRUÇÃO</li>
+                                <li><a href="<?php echo $this->baseUrl('servico/pinturas') ?>">PINTURAS EM GERAL</a></li>
+                                <li><a href="<?php echo $this->baseUrl('servico/acabamentos') ?>">ACABAMENTOS DA CONSTRUÇÕES</a></li>
+                                <li class="uk-nav-header">AUTOMOTORES</li>
+                                <li><a href="<?php echo $this->baseUrl('servico/mecanica') ?>">MANUTENÇÃO MECÂNICA</a></li>
+                                <li><a href="<?php echo $this->baseUrl('servico/eletrica') ?>">MANUTENÇÃO ELÉTRICA</a></li>
+                            </ul>
+                            <ul class="uk-nav-sub">
+                                <li class="uk-nav-header">OUTROS</li>
+                                <li><a href="<?php echo $this->baseUrl('servico/contabilidade') ?>">CONTABILIDADE</a></li>
+                                <li><a href="<?php echo $this->baseUrl('servico/engenharia') ?>">SERVIÇOS DE ENGENHARIA</a></li>
+                                <li><a href="<?php echo $this->baseUrl('servico/corretagemimoveis') ?>">CORRETAGEM DE IMÓVEIS</a></li>
+                                <li><a href="<?php echo $this->baseUrl('servico/treinamentos') ?>">TREINAMENTOS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="<?php echo $this->baseUrl('contato') ?>">CONTATO</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pusher">
+                <div class="full height">
+                    <div class="content-system">
+                        <nav class="uk-navbar-container uk-navbar-transparent">
+                            <div class="uk-container">
+                                <div uk-navbar>
+                                    <div class="uk-navbar-left">
+
+                                        <ul class="uk-navbar-nav">
+
+                                            <li><a href="<?php echo FACEBOOK ?>" uk-icon="icon: facebook" target="_blank"></a></li>
+                                            <li><a href="<?php echo INSTAGRAM ?>" uk-icon="icon: instagram" target="_blank"></a></li>
+                                            <li><a href="<?php echo WHATSAPP ?>" uk-icon="icon: whatsapp" target="_blank"></a></li>
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="uk-navbar-right uk-visible@s">
+
+                                        <ul class="uk-navbar-nav">
+
+                                            <li><a href="<?php echo ROUTE ?>" target="_blank">COMO CHEGAR</a></li>
+                                            <li><a href="mailto:<?php echo E_MAIL ?>"><?php echo E_MAIL ?></a></li>
+                                            <li><a href="tel:<?php echo TELEFONE_1 ?>"><?php echo TELEFONE_1 ?></a></li>
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                        <nav class="uk-navbar-container navbar-fixed" uk-sticky>
+                            <div class="uk-container">
+                                <div uk-navbar>
+                                    <div class="uk-navbar-left">
+
+                                        <ul class="uk-navbar-nav">
+                                            <li class="uk-active uk-margin-top uk-margin-bottom">
+                                                <a href="<?php echo $this->baseUrl('/') ?>">
+                                                    <img src="<?php echo $this->baseUrl('public/modules/default/img/brand/logotipo_1.png') ?>" /> 
+                                                </a>
+                                            </li>
+
+                                            <li class="uk-active uk-visible@s uk-margin-top uk-margin-bottom">
+                                                <a href="<?php echo $this->baseUrl('/') ?>">
+                                                    <img src="<?php echo $this->baseUrl('public/modules/default/img/brand/logotipo_2.png') ?>" /> 
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="uk-navbar-right">
+
+                                        <ul class="uk-navbar-nav uk-visible@s">
+
+                                            <li><a href="<?php echo $this->baseUrl('/') ?>">INÍCIO</a></li>
+                                            <li><a href="<?php echo $this->baseUrl('sobre') ?>">A EMPRESA</a></li>
+                                            <li>
+                                                <a href="<?php echo $this->baseUrl('produto') ?>">SISTEMAS</a>
+                                                <div class="uk-navbar-dropdown uk-navbar-dropdown-width-1">
+                                                    <div class="uk-navbar-dropdown-grid uk-child-width-1-1" uk-grid>
+                                                        <div>
+                                                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                                <li><a href="<?php echo $this->baseUrl('produto/icom') ?>">ICOM</a></li>
+                                                                <li><a href="<?php echo $this->baseUrl('produto/safc') ?>">SAFC</a></li>
+                                                                <li><a href="<?php echo $this->baseUrl('produto/sigs') ?>">SIGS</a></li>
+                                                                <li class="uk-nav-divider"></li>
+                                                                <li><a href="<?php echo $this->baseUrl('produto/siscopesca') ?>">SISCOPESCA</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <a href="<?php echo $this->baseUrl('servico') ?>">SERVIÇOS</a>
+                                                <div class="uk-navbar-dropdown uk-navbar-dropdown-width-3">
+                                                    <div class="uk-navbar-dropdown-grid uk-child-width-1-3" uk-grid>
+                                                        <div>
+                                                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                                <li class="uk-nav-header">FABRICAÇÃO</li>
+                                                                <li><a href="<?php echo $this->baseUrl('servico/fabricacaogelo') ?>">FABRICAÇÃO DE GELO</a></li>
+                                                                <li class="uk-nav-header">INST. E MANUTENÇÃO</li>
+                                                                <li><a href="<?php echo $this->baseUrl('servico/energiasolar') ?>">ENERGIA SOLAR</a></li>
+                                                                <li><a href="<?php echo $this->baseUrl('servico/redeeletrica') ?>">REDE ELÉTRICA</a></li>
+                                                                <li><a href="<?php echo $this->baseUrl('servico/ventilacaoeresfriacao') ?>">VENTILAÇÃO E RESFRIAÇÃO</a></li>
+                                                                <li><a href="<?php echo $this->baseUrl('servico/portasjanelasdivisorias') ?>">PORTAS, JANELAS, DIVISÓRIAS...</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div>
+                                                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                                <li class="uk-nav-header">CONSTRUÇÃO</li>
+                                                                <li><a href="<?php echo $this->baseUrl('servico/pinturas') ?>">PINTURAS EM GERAL</a></li>
+                                                                <li><a href="<?php echo $this->baseUrl('servico/acabamentos') ?>">ACABAMENTOS DA CONSTRUÇÕES</a></li>
+                                                                <li class="uk-nav-header">AUTOMOTORES</li>
+                                                                <li><a href="<?php echo $this->baseUrl('servico/mecanica') ?>">MANUTENÇÃO MECÂNICA</a></li>
+                                                                <li><a href="<?php echo $this->baseUrl('servico/eletrica') ?>">MANUTENÇÃO ELÉTRICA</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div>
+                                                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                                <li class="uk-nav-header">OUTROS</li>
+                                                                <li><a href="<?php echo $this->baseUrl('servico/contabilidade') ?>">CONTABILIDADE</a></li>
+                                                                <li><a href="<?php echo $this->baseUrl('servico/engenharia') ?>">SERVIÇOS DE ENGENHARIA</a></li>
+                                                                <li><a href="<?php echo $this->baseUrl('servico/corretagemimoveis') ?>">CORRETAGEM DE IMÓVEIS</a></li>
+                                                                <li><a href="<?php echo $this->baseUrl('servico/treinamentos') ?>">TREINAMENTOS</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li><a href="<?php echo $this->baseUrl('contato') ?>">CONTATO</a></li>
+
+                                        </ul>
+                                        <ul class="uk-navbar-nav uk-hidden@m">
+
+                                            <li>
+                                                <a uk-toggle="target: #offcanvas-push">
+                                                    <span uk-icon="menu"></span>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                        <?php echo $this->layout()->content; ?>
+
+                        <footer class="uk-section">
+                            <div class="uk-container">
+                                <div class="uk-grid-divider" uk-grid>
+                                    <div class="uk-width-1-3@s">
+                                        <h4 class="uk-h4 uk-text-primary">A empresa</h4>
+                                        <p class="uk-text-meta">A Pararisk está no mercado há mais de 10 anos, oferecendo qualidade nos seus serviços.</p>
+                                        <ul class="uk-iconnav">
+                                            <li><a href="<?php echo FACEBOOK ?>" uk-icon="icon: facebook" target="_blank"></a></li>
+                                            <li><a href="<?php echo INSTAGRAM ?>" uk-icon="icon: instagram" target="_blank"></a></li>
+                                            <li><a href="<?php echo WHATSAPP ?>" uk-icon="icon: whatsapp" target="_blank"></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="uk-width-1-3@s">
+                                        <h4 class="uk-h4 uk-text-primary">Atalhos</h4>
+                                        <ul class="uk-list">
+                                            <li><a href="<?php echo BLOG ?>" target="_blank">BLOG</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="uk-width-1-3@s uk-text-right">
+                                        <h4 class="uk-h4 uk-text-primary">Contatos</h4>
+                                        <p class="uk-text-meta"><?php echo TELEFONE_1 ?> <span uk-icon="receiver"></span></p>
+                                        <p class="uk-text-meta"><?php echo E_MAIL ?> <span uk-icon="mail"></span></p>
+                                        <p class="uk-text-meta"><?php echo ENDERECO ?> <span uk-icon="location"></span></p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <hr />
+                            <nav class="uk-navbar-container uk-navbar-transparent uk-visible@s">
+                                <div class="uk-container">
+                                    <div uk-navbar>
+                                        <div class="uk-navbar-left">
+                                            <ul class="uk-navbar-nav">
+                                                <li><a><?php echo date('Y') ?> © TODOS OS DIREITOS RESERVADOS</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="uk-navbar-right uk-visible@s">
+                                            <ul class="uk-navbar-nav">
+                                                <li><a>TECNOLOGIA ONDS</a></li>
+                                                <li><a uk-totop uk-scroll></a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </nav>
+                        </footer>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php
+        echo $this->headScript()
+                ->prependFile($this->baseUrl('public/modules/application/js/contact.js'))
+                ->prependFile($this->baseUrl('public/library/mask/js/jquery.mask.js'))
+                ->prependFile($this->baseUrl('public/library/instafeed/script.js'))
+                ->prependFile($this->baseUrl('public/library/getuikit/js/uikit.icon.min.js'))
+                ->prependFile($this->baseUrl('public/library/getuikit/js/uikit.min.js'))
+                ->prependFile($this->baseUrl('public/library/semantic/semantic.min.js'))
+                ->prependFile($this->baseUrl('public/library/url/url.min.js'))
+                ->prependFile($this->baseUrl('public/config/base_url.js'))
+                ->prependFile($this->baseUrl('public/library/jquery/jquery.js'));
+        ?>
+
+    </body>
+</html>

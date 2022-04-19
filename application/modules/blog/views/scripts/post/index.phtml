@@ -1,0 +1,122 @@
+<div class="row">
+    <div class="column">
+        <div class="ui breadcrumb">
+            <a class="section" href="/account/dashboard">Início</a>
+            <div class="divider"> / </div>
+            <div class="active section"><?php echo $this->title_page ?></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segment">
+            <table class="ui celled selectable table" id="onTablePost">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Título</th>
+                        <th>Data</th>
+                        <th>Status</th>
+                        <th>Imagem</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalCreate">
+    <div class="header">Nova registro</div>
+    <div class="content">
+        <form class="ui equal width form">
+            <div class="fields">
+                <div class="field required">
+                    <label>Título</label>
+                    <input type="text" name="title_post" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Status</label>
+                    <select class="ui dropdown" name="status_post">
+                        <option value="1">Ativo</option>
+                        <option value="2">Inativo</option>
+                    </select>
+                </div>
+                <div class="field required">
+                    <label>Data</label>
+                    <input type="date" name="date_post" placeholder="Informe..." />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Descrição curta</label>
+                    <textarea name="description_short_post" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Descrição longa</label>
+                    <div id="editor"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Cancelar</button>
+        <button class="ui labeled icon primary ok button"><i class="check icon"></i> Salvar</button>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalUpdate">
+    <div class="header">Atualizar registro</div>
+    <div class="content">
+        <form class="ui equal width form">
+            <div class="fields">
+                <div class="field required">
+                    <label>Título</label>
+                    <input type="text" name="title_post" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Status</label>
+                    <select class="ui dropdown" name="status_post">
+                        <option value="1">Ativo</option>
+                        <option value="2">Inativo</option>
+                    </select>
+                </div>
+                <div class="field required">
+                    <label>Data</label>
+                    <input type="date" name="date_post" placeholder="Informe..." />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Descrição curta</label>
+                    <textarea type="text" name="description_short_post" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Descrição longa</label>
+                    <div id="editorUpdate"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Cancelar</button>
+        <button class="ui labeled icon primary ok button"><i class="check icon"></i> Salvar</button>
+    </div>
+</div>
+
+
+<form class="ui form on-form-file" style="display: none">
+    <div class="field">
+        <input type="file" name="file" />
+    </div>                
+</form>
+
+

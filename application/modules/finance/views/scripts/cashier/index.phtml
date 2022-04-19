@@ -1,0 +1,160 @@
+<div class="row">
+    <div class="column">
+        <div class="ui breadcrumb">
+            <a class="section" href="/account/dashboard">Início</a>
+            <div class="divider"> / </div>
+            <div class="active section"><?php echo $this->title_page ?></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segment">
+            <table class="ui celled selectable table" id="onTableCashier">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Descrição</th>
+                        <th>Conta</th>
+                        <th>Data</th>
+                        <th>Retirado</th>
+                        <th>Lançamentos</th>
+                        <th>Troco</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalCreate">
+    <div class="header">Nova Retirada</div>
+    <div class="content">
+        <form class="ui equal width form on-form-insert">
+            <div class="fields">
+                <div class="field required">
+                    <label>Descrição</label>
+                    <input type="text" name="description_order" placeholder="Informe..." />
+                </div>
+                <div class="sixe wide field required">
+                    <label>Conta</label>
+                    <div class="ui search selection dropdown on-account-dropdown">
+                        <input type="hidden" name="id_account">
+                        <i class="dropdown icon"></i>
+                        <input type="text" class="search" tabindex="0" />
+                        <span class="sizer"></span>
+                        <div class="default text">Selecione...</div>
+                        <div class="menu" tabindex="-1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="six wide field required">
+                    <label>Emissão</label>
+                    <input type="date" name="date_issue_order" />
+                </div>
+                <div class="six wide field required">
+                    <label>Valor</label>
+                    <input type="text" name="price_order" placeholder="Informe..." class="on-mask-money" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Cancelar</button>
+        <button class="ui labeled icon primary ok button"><i class="check icon"></i> Confirmar</button>
+    </div>
+</div>
+
+
+<div class="ui modal" id="onModalCreateOut">
+    <i class="close icon"></i>
+    <div class="header">
+        Novo lançamento de saída
+    </div>
+    <div class="content">
+        <form class="ui equal width form" id="onFormOrderOut">
+            <input type="hidden" name="id_type_order" value="2" />
+            <div class="fields">
+                <div class="four wide field">
+                    <label>Referência</label>
+                    <input type="text" name="reference_order" />
+                </div>
+                <div class="field required">
+                    <label>Descrição</label>
+                    <input type="text" name="description_order" placeholder="Informe..." />
+                </div>
+                <div class="field required">
+                    <label id="onLabelContact">Cadastro</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-contact">
+                            <input type="hidden" name="id_contact">
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/account/contact" target="_blank" uk-tooltip="title: Ir para contatos"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Planos de Conta</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-chart-accounts">
+                            <input type="hidden" name="id_chart_accounts" />
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/settings/chart-accounts" target="_blank" uk-tooltip="title: Ir para planos de conta"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Centro de Custo</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-cost-center">
+                            <input type="hidden" name="id_cost_center">
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/settings/cost-center" target="_blank" uk-tooltip="title: Ir para centro de custo"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Emissão</label>
+                    <input type="date" name="date_issue_order" />
+                </div>
+                <div class="field">
+                    <label>Competência</label>
+                    <input type="month" name="date_competence_order" />
+                </div>
+                <div class="field required">
+                    <label>Valor</label>
+                    <input type="text" name="price_order" class="on-mask-money" placeholder="Informe..." />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <div class="ui secondary deny button">
+            Cancelar
+        </div>
+        <div class="ui primary ok right labeled icon button">
+            Salvar
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>

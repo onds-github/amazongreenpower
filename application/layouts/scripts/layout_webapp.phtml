@@ -1,0 +1,179 @@
+<?php echo $this->doctype('HTML5') ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR">
+    <head>
+        <?php
+        echo $this->headTitle($this->title_page);
+
+        echo $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1')
+                ->setHttpEquiv('Content-Type', 'text/html;charset=UTF-8')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+                ->appendHttpEquiv('language', 'pt-BR')
+                ->appendName('robots', 'noindex, nofollow');
+
+        echo $this->headLink()
+                ->appendStylesheet('/public/assets/css/style.icons.css?v=2')
+                ->appendStylesheet('/public/assets/css/style.default.css?v=' . time())
+                ->appendStylesheet($this->baseUrl('public/library/contextmenu/default.css'))
+                ->appendStylesheet('/public/assets/addons/datatables/dataTables.semantic.min.css')
+                ->appendStylesheet('/public/assets/addons/datatables/dataTables.select.min.css')
+                ->appendStylesheet('/public/assets/addons/datatables/dataTables.buttons.min.css')
+                ->prependStylesheet('/public/assets/semantic/semantic.min.css');
+        ?>
+
+        <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet" />
+    </head>
+    <body>
+        
+            <!--sidebar-->
+            <div class="ui sidebar vertical left menu overlay borderless visible sidemenu inverted blue <?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuSmall' : 'isMenuLarge') ?>">
+                <a class="item logo" href="/account/dashboard"></a>
+                
+                <a class="<?php echo ($this->id_module == 0 ? 'active' : '') ?> item" href="/account/dashboard">
+                    <span class="<?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuNoLargeVisible' : 'isMenuLargeVisible') ?>">Visão Gerencial</span>
+                    <i class="home icon"></i>
+                </a>
+
+                <a class="<?php echo ($this->id_module == 1 ? 'active' : '') ?> item" href="/account/contact">
+                    <span class="<?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuNoLargeVisible' : 'isMenuLargeVisible') ?>">Cadastros</span>
+                    <i class="users icon"></i>
+                </a>
+                <div class="ui divider"></div>
+                
+                <a class="<?php echo ($this->id_module == 2 ? 'active' : '') ?> item" href="/blog/post">
+                    <span class="<?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuNoLargeVisible' : 'isMenuLargeVisible') ?>">Blog - Publicações</span>
+                    <i class="file alternate outline icon"></i>
+                </a>
+                
+<!--                <a class="<?php echo ($this->id_module == 4 ? 'active' : '') ?> item" href="/blog/post-category">
+                    <span class="<?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuNoLargeVisible' : 'isMenuLargeVisible') ?>">Blog - Categorias</span>
+                    <i class="dollar sign icon"></i>
+                </a>-->
+                
+                <div class="ui divider"></div>
+                
+                <a class="<?php echo ($this->id_module == 5 ? 'active' : '') ?> item" href="/settings/page">
+                    <span class="<?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuNoLargeVisible' : 'isMenuLargeVisible') ?>">Páginas</span>
+                    <i class="file alternate icon"></i>
+                </a>
+                
+                <a class="<?php echo ($this->id_module == 5 ? 'active' : '') ?> item" href="/website/section">
+                    <span class="<?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuNoLargeVisible' : 'isMenuLargeVisible') ?>">Section</span>
+                    <i class="file alternate icon"></i>
+                </a>
+                
+                <a class="<?php echo ($this->id_module == 6 ? 'active' : '') ?> item" href="/settings/menu">
+                    <span class="<?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuNoLargeVisible' : 'isMenuLargeVisible') ?>">Menus</span>
+                    <i class="file alternate icon"></i>
+                </a>
+                
+                <a class="<?php echo ($this->id_module == 7 ? 'active' : '') ?> item" href="/website/service">
+                    <span class="<?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuNoLargeVisible' : 'isMenuLargeVisible') ?>">Serviços</span>
+                    <i class="file alternate icon"></i>
+                </a>
+                
+                <a class="<?php echo ($this->id_module == 7 ? 'active' : '') ?> item" href="/website/portfolio">
+                    <span class="<?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuNoLargeVisible' : 'isMenuLargeVisible') ?>">Portfolio</span>
+                    <i class="file alternate icon"></i>
+                </a>
+                
+                <a class="<?php echo ($this->id_module == 7 ? 'active' : '') ?> item" href="/website/partner">
+                    <span class="<?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuNoLargeVisible' : 'isMenuLargeVisible') ?>">Parceiros</span>
+                    <i class="file alternate icon"></i>
+                </a>
+                
+                <a class="<?php echo ($this->id_module == 7 ? 'active' : '') ?> item" href="/website/testimony">
+                    <span class="<?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuNoLargeVisible' : 'isMenuLargeVisible') ?>">Depoimentos</span>
+                    <i class="file alternate icon"></i>
+                </a>
+                <div class="ui divider"></div>
+                
+                <a class="item" href="/account/access/out">
+                    <span class="<?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuNoLargeVisible' : 'isMenuLargeVisible') ?>">Encerrar Sessão</span>
+                    <i class="sign-out icon"></i>
+                </a>
+                
+            </div>
+                
+            <!--sidebar-->
+
+            <div class="pusher pushable">
+                <div class="navslide navwrap <?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuSmallMargin' : 'isMenuLargeMargin') ?>">
+                    <div class="ui menu icon borderless grid" data-color="inverted white">
+                        <a class="item labeled" id="onButtonMenu">
+                            <i class="bars big icon"></i>
+                        </a>
+                        <div class="right menu">
+                            <div class="ui right dropdown item on-dropdown">
+                                <div>
+                                    <?php echo Zend_Auth::getInstance()->getIdentity()->name_user ?>
+                                    <div>
+                                        <?php echo Zend_Auth::getInstance()->getIdentity()->email_user ?>
+                                    </div>
+                                </div>
+                                <i class="dropdown icon"></i>
+                                <div class="menu">
+                                    <div class="header">
+                                        Config. da Conta
+                                    </div>
+                                    <a class="item" href="/account/user">Info. da Conta</a>
+                                    <div class="divider"></div>
+                                    <a class="item" href="/account/access/out">Encerrar Sessão</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainWrap navslide <?php echo (Zend_Auth::getInstance()->getIdentity()->menu_user == 1 ? 'isMenuSmallMargin' : 'isMenuLargeMargin') ?>">
+                    <div class="ui padded grid stackable">
+
+                        <?php echo $this->layout()->content; ?>
+
+                    </div>
+                </div>
+
+            </div>
+       
+        <?php
+        echo $this->headScript()
+                ->prependFile('/public/assets/js/script.default.js?v=' . time())
+                ->prependFile('/public/assets/addons/oncrud/script.onFilter.js')
+                ->prependFile('/public/assets/addons/oncrud/script.onDelete.js')
+                ->prependFile('/public/assets/addons/oncrud/script.onUpdate.js')
+                ->prependFile('/public/assets/addons/oncrud/script.onCreate.js')
+                ->prependFile('/public/assets/addons/fileupload/fileupload-ui.js')
+                ->prependFile('/public/assets/addons/fileupload/fileupload-validate.js')
+                ->prependFile('/public/assets/addons/fileupload/fileupload-process.js')
+                ->prependFile('/public/assets/addons/fileupload/fileupload.js')
+                ->prependFile('/public/assets/addons/fileupload/iframe-transport.js')
+                ->prependFile('/public/assets/addons/fileupload/ui.widget.js')
+
+                ->prependFile('/public/assets/addons/numeral/numeral-locales.js?v=' . time())
+                ->prependFile('/public/assets/addons/numeral/numeral.min.js')
+                ->prependFile('/public/library/moment/default-locales.js')
+                ->prependFile('/public/library/moment/default.js')
+                ->prependFile('/public/library/contextmenu/default.js')
+                ->appendFile('https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js')
+                ->prependFile('/public/assets/addons/datatables/dataTables.jszip.min.js')
+                ->prependFile('/public/assets/addons/datatables/dataTables.vfs_fonts.min.js')
+                ->prependFile('/public/assets/addons/datatables/dataTables.pdfmake.min.js')
+                ->prependFile('/public/assets/addons/datatables/dataTables.buttons.colVis.min.js')
+                ->prependFile('/public/assets/addons/datatables/dataTables.buttons.html5.min.js')
+                ->prependFile('/public/assets/addons/datatables/dataTables.buttons.min.js')
+                ->prependFile('/public/assets/addons/datatables/dataTables.select.min.js')
+                ->prependFile('/public/assets/addons/datatables/dataTables.rowgroup.min.js')
+                ->prependFile('/public/assets/addons/datatables/dataTables.sorting.min.js')
+                ->prependFile('/public/assets/addons/datatables/dataTables.semantic.min.js')
+                ->prependFile('/public/assets/addons/datatables/dataTables.default.min.js')
+                ->prependFile('/public/assets/semantic/semantic.min.js')
+                ->prependFile('/public/config/default.js')
+                ->prependFile('/public/library/mask/jquery.mask.min.js')
+                ->prependFile('/public/library/jquery/jquery.min.js');
+        ?>
+        <script src="https://unpkg.com/filepond-plugin-image-crop/dist/filepond-plugin-image-crop.js"></script>
+        <script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
+
+        <script src="https://unpkg.com/jquery-filepond/filepond.jquery.js"></script>
+        <script src="https://cdn.tiny.cloud/1/esbw3jfi5neg3saqaoz7lhdpsu2nlr37gbn7bb0x5jnvniow/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    </body>
+</html>

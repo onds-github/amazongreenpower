@@ -1,0 +1,365 @@
+<?php 
+
+    Zend_Loader::loadClass("Section");
+    $model = new Section();
+    $section2 = $model->selectTable(2)[0];
+    $result = $model->selectTable(7)[0];
+
+?>
+
+<div class="hero sub">
+    <div class="container">
+        <div class="hero-title-flex">
+            <?php echo $result['description_short_section'] ?>
+        </div>
+        <div class="margin-20px">
+            <div class="we-are-grid">
+                <div>
+                    <p data-w-id="e08e098b-e589-4601-43fb-e3b5ad984176" style="opacity:0" class="subhead gray"><?php echo $result['description_long_section'] ?><strong><br/></strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-w-id="e08e098b-e589-4601-43fb-e3b5ad984181" style="opacity:0" class="flex-lottie">
+        <a href="#down" data-w-id="e08e098b-e589-4601-43fb-e3b5ad984182" class="social-icon down w-inline-block">
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+            <div data-w-id="e08e098b-e589-4601-43fb-e3b5ad984184" data-animation-type="lottie" data-src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/6140714b1d7189d6391ea9fc_icons8-down.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="1.1666666666666667" data-duration="0" class="animation-image _4"></div>
+        </a>
+    </div>
+    <div class="social-wrapper left">
+        <a data-w-id="e08e098b-e589-4601-43fb-e3b5ad984186" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e584debc11e0c9d4225_facebook.png" loading="lazy" width="20" alt="" class="animation-image"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+        <a data-w-id="e08e098b-e589-4601-43fb-e3b5ad984189" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e58412b62ca34cd5219_twitter.png" loading="lazy" width="20" alt="" class="animation-image"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+        <a data-w-id="e08e098b-e589-4601-43fb-e3b5ad98418c" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e5874d7a635ad9ecf31_instagram.png" loading="lazy" width="20" alt="" class="animation-image"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+        <a data-w-id="e08e098b-e589-4601-43fb-e3b5ad98418f" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e583ff4391b0bc9191c_linkedin.png" loading="lazy" width="20" alt="" class="animation-image _2"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+    </div>
+</div>
+<div id="down" data-w-id="e08e098b-e589-4601-43fb-e3b5ad984192" class="section wf-section">
+    <div class="container">
+        <div class="who-we-are-wrapper">
+            <div class="photo-animation-flex">
+                <div data-w-id="e08e098b-e589-4601-43fb-e3b5ad984196" style="opacity:0" class="photo-left">
+                    <img src="<?php echo $section2['image_section']; ?>" loading="lazy" width="533" alt=""/>
+                </div>
+                <div data-w-id="e08e098b-e589-4601-43fb-e3b5ad984198" style="opacity:0" class="photo-right">
+                    <p data-w-id="322b60f1-d37a-0ac8-971d-d8f8c3810e74"  class="subhead gray"><?php echo $section2['description_long_section']; ?><strong><br/></strong></p>
+                </div>
+
+                <h3 data-w-id="e08e098b-e589-4601-43fb-e3b5ad98419d" style="opacity:0" class="display-2 absolute"><?php echo $section2['description_short_section'] ?></h3>
+            </div>
+        </div>
+<!--        <div class="margin-100px">
+            <div class="max-w-width">
+                <h1 data-w-id="7f327a29-91fa-836a-5b99-57d31f58f1e0" style="opacity:0" class="display-2">Meet Our<span class="title-line"> team</span></h1>
+            </div>
+            <div class="margin-70px">
+                <div class="team-grid">
+                    <div data-w-id="2b0ed468-6a15-32a5-8c9b-2561f193b0ce" style="opacity:0" class="team-flex">
+                        <div class="team-photo"></div>
+                        <div>
+                            <div class="testimonials-name _3">Luke Sanderson<br/></div>
+                            <div class="testimonials-name _2">Co-Founder</div>
+                        </div>
+                        <div class="margin-20px">
+                            <div class="social-wrapper">
+                                <a data-w-id="ca63288b-e9fb-685a-6923-a8062050cfc7" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+                                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e584debc11e0c9d4225_facebook.png" loading="lazy" width="20" alt="" class="animation-image"/>
+                                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+                                </a>
+                                <a data-w-id="ca63288b-e9fb-685a-6923-a8062050cfca" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+                                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e58412b62ca34cd5219_twitter.png" loading="lazy" width="20" alt="" class="animation-image"/>
+                                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+                                </a>
+                                <a data-w-id="ca63288b-e9fb-685a-6923-a8062050cfcd" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+                                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e5874d7a635ad9ecf31_instagram.png" loading="lazy" width="20" alt="" class="animation-image"/>
+                                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+                                </a>
+                                <a data-w-id="ca63288b-e9fb-685a-6923-a8062050cfd0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+                                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e583ff4391b0bc9191c_linkedin.png" loading="lazy" width="20" alt="" class="animation-image _2"/>
+                                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-w-id="6063306d-bce0-0c5e-bcf1-061c4a26def6" style="opacity:0" class="team-flex">
+                        <div class="team-photo _2"></div>
+                        <div>
+                            <div class="testimonials-name _3">Phoebe Moore<br/></div>
+                            <div class="testimonials-name _2">Desinger</div>
+                        </div>
+                        <div class="margin-20px">
+                            <div class="social-wrapper">
+                                <a data-w-id="6063306d-bce0-0c5e-bcf1-061c4a26df00" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+                                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e584debc11e0c9d4225_facebook.png" loading="lazy" width="20" alt="" class="animation-image"/>
+                                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+                                </a>
+                                <a data-w-id="6063306d-bce0-0c5e-bcf1-061c4a26df03" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+                                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e58412b62ca34cd5219_twitter.png" loading="lazy" width="20" alt="" class="animation-image"/>
+                                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+                                </a>
+                                <a data-w-id="6063306d-bce0-0c5e-bcf1-061c4a26df06" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+                                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e5874d7a635ad9ecf31_instagram.png" loading="lazy" width="20" alt="" class="animation-image"/>
+                                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+                                </a>
+                                <a data-w-id="6063306d-bce0-0c5e-bcf1-061c4a26df09" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+                                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e583ff4391b0bc9191c_linkedin.png" loading="lazy" width="20" alt="" class="animation-image _2"/>
+                                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-w-id="990cc1cf-ac0a-604e-aa72-c9e481e9507b" style="opacity:0" class="team-flex">
+                        <div class="team-photo _3"></div>
+                        <div>
+                            <div class="testimonials-name _3">Leo Ashton<br/></div>
+                            <div class="testimonials-name _2">Developer</div>
+                        </div>
+                        <div class="margin-20px">
+                            <div class="social-wrapper">
+                                <a data-w-id="990cc1cf-ac0a-604e-aa72-c9e481e95085" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+                                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e584debc11e0c9d4225_facebook.png" loading="lazy" width="20" alt="" class="animation-image"/>
+                                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+                                </a>
+                                <a data-w-id="990cc1cf-ac0a-604e-aa72-c9e481e95088" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+                                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e58412b62ca34cd5219_twitter.png" loading="lazy" width="20" alt="" class="animation-image"/>
+                                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+                                </a>
+                                <a data-w-id="990cc1cf-ac0a-604e-aa72-c9e481e9508b" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+                                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e5874d7a635ad9ecf31_instagram.png" loading="lazy" width="20" alt="" class="animation-image"/>
+                                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+                                </a>
+                                <a data-w-id="990cc1cf-ac0a-604e-aa72-c9e481e9508e" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+                                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e583ff4391b0bc9191c_linkedin.png" loading="lazy" width="20" alt="" class="animation-image _2"/>
+                                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </div>
+</div>
+<div class="section wf-section">
+    <div class="container">
+        <div class="max-w-width left">
+            <h2 data-w-id="e08e098b-e589-4601-43fb-e3b5ad984206" style="opacity:0" class="h2-bigger">We worry about the details so you don&#x27;t have to. When you work with our web agency, you can be certain that your website meets every standard.</h2>
+        </div>
+        <div class="margin-80px">
+            <div class="grid-3-columns">
+                 <?php 
+
+                            Zend_Loader::loadClass("Service");
+                            $service = new Service();
+                            
+                            foreach ($service->selectTable() as $value) {
+                                echo '<div data-w-id="e08e098b-e589-4601-43fb-e3b5ad98420a" style="opacity:0">
+                                            <a href="#" class="social-icon services w-inline-block">
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+                                                <img src="' . $value['image_service'] . '" loading="lazy" width="20" alt="" class="animation-image _5"/>
+                                            </a>
+                                            <div class="margin-20px">
+                                                <h3 class="project-title">' . $value['description_short_service'] . '</h3>
+                                            </div>
+                                            <div class="margin-20px">
+                                                ' . $value['description_long_service'] . '
+                                            </div>
+                                        </div>';
+                           }
+
+                        ?>
+                
+            </div>
+        </div>
+        <div class="margin-100px">
+            <div class="grid-2-columns">
+                <div>
+                    <h3 data-w-id="e08e098b-e589-4601-43fb-e3b5ad98424f" style="opacity:0" class="display-2">Our <span class="title-line">Skills</span></h3>
+                    <div class="margin-40px">
+                        <div class="skills-grid">
+                            <div data-w-id="e08e098b-e589-4601-43fb-e3b5ad984255" style="opacity:0">
+                                <div class="skills-text">
+                                    <div class="text-block">Design</div>
+                                    <div>80%</div>
+                                </div>
+                                <div class="skills-wrapper">
+                                    <div style="width:0%" class="skills-overlay"></div>
+                                </div>
+                            </div>
+                            <div data-w-id="e08e098b-e589-4601-43fb-e3b5ad98425d" style="opacity:0">
+                                <div class="skills-text">
+                                    <div>Branding</div>
+                                    <div>41%</div>
+                                </div>
+                                <div class="skills-wrapper">
+                                    <div style="width:0%" class="skills-overlay lead"></div>
+                                </div>
+                            </div>
+                            <div data-w-id="e08e098b-e589-4601-43fb-e3b5ad984265" style="opacity:0">
+                                <div class="skills-text">
+                                    <div>Strategy</div>
+                                    <div>70%</div>
+                                </div>
+                                <div class="skills-wrapper">
+                                    <div style="width:0%" class="skills-overlay photoshop"></div>
+                                </div>
+                            </div>
+                            <div data-w-id="e08e098b-e589-4601-43fb-e3b5ad98426d" style="opacity:0">
+                                <div class="skills-text">
+                                    <div>Digital</div>
+                                    <div>100%</div>
+                                </div>
+                                <div class="skills-wrapper">
+                                    <div style="width:0%" class="skills-overlay illustration"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-animation right">
+                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/6143214cdc0c03491ef95f8d_photo-4.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 43vw, 41vw" srcset="https://assets.website-files.com/613f528b6c338d2716ac8cbd/6143214cdc0c03491ef95f8d_photo-4-p-500.jpeg 500w, https://assets.website-files.com/613f528b6c338d2716ac8cbd/6143214cdc0c03491ef95f8d_photo-4-p-800.jpeg 800w, https://assets.website-files.com/613f528b6c338d2716ac8cbd/6143214cdc0c03491ef95f8d_photo-4.jpg 1248w" alt="" class="photo"/>
+                    <div class="absolute-background"></div>
+                </div>
+            </div>
+        </div>
+        <div class="margin-70px">
+            <div data-w-id="e08e098b-e589-4601-43fb-e3b5ad984279" style="width:0%" class="fun-line"></div>
+        </div>
+        <div class="margin-50px">
+            <div class="fun-wrapper">
+                <div data-w-id="e08e098b-e589-4601-43fb-e3b5ad98427c" style="opacity:0" class="fun-facts-wrapper">
+                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/614465dae1cc36f095633787_icons8-man-240-(1).png" width="65" alt="" class="fun-image"/>
+                    <div class="div-block">
+                        <h1 class="fun-number">7</h1>
+                        <p>Hero&#x27;s Member</p>
+                    </div>
+                </div>
+                <div data-w-id="e08e098b-e589-4601-43fb-e3b5ad984283" style="opacity:0" class="fun-facts-wrapper">
+                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/614465dad8871e7794277f79_icons8-bulb-240.png" width="65" alt="" class="fun-image"/>
+                    <div>
+                        <h1 class="fun-number">100</h1>
+                        <p>Sleepless Hours</p>
+                    </div>
+                </div>
+                <div data-w-id="e08e098b-e589-4601-43fb-e3b5ad98428a" style="opacity:0" class="fun-facts-wrapper">
+                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/614465dad00b6aef05f12346_icons8-badge-240.png" width="65" alt="" class="fun-image"/>
+                    <div>
+                        <h3 class="fun-number">99%</h3>
+                        <p>Positive Feedback</p>
+                    </div>
+                </div>
+                <div data-w-id="e08e098b-e589-4601-43fb-e3b5ad984291" style="opacity:0" class="fun-facts-wrapper">
+                    <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/614465daec60fc4e8c544d92_icons8-coffee-240.png" width="65" alt="" class="fun-image"/>
+                    <div>
+                        <h1 class="fun-number">1000+</h1>
+                        <p>Cups of Coffee</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-w-id="e08e098b-e589-4601-43fb-e3b5ad984298" class="section testimonials wf-section">
+    <div class="container">
+        <div class="max-w-width">
+            <h1 data-w-id="e08e098b-e589-4601-43fb-e3b5ad98429b" style="opacity:0" class="display-2">What they<span class="title-line"> think</span></h1>
+        </div>
+        <div class="margin-100px make-50px">
+            <div class="slider-flex">
+                <div data-delay="10000" data-animation="slide" class="slider-testimonials w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true" id="sliderId">
+                    <div class="mask w-slider-mask">
+                        
+                <?php 
+
+                            Zend_Loader::loadClass("Testimony");
+                            $testimony = new Testimony();
+                            
+                            foreach ($testimony->selectTable() as $value) {
+                                echo '<div data-w-id="79e6145c-131c-34ff-c0e7-57bb6dba4e30" class="slide-1 w-slide">
+                            <div class="slide-content">
+                                <div class="client-wrapper _2">
+                                    <div class="start-flex"><img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/6143473069c8ed77f846cb38_icons8-star-96.png" loading="lazy" width="20" alt="" class="star-image"/><img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/6143473069c8ed77f846cb38_icons8-star-96.png" loading="lazy" width="20" alt="" class="star-image"/><img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/6143473069c8ed77f846cb38_icons8-star-96.png" loading="lazy" width="20" alt="" class="star-image"/><img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/6143473069c8ed77f846cb38_icons8-star-96.png" loading="lazy" width="20" alt="" class="star-image"/><img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/6143473069c8ed77f846cb38_icons8-star-96.png" loading="lazy" width="20" alt="" class="star-image"/></div>
+                                    <div class="quote-text _2">&quot;' . $value['description_testimony'] . '&quot;</div>
+                                    <div class="author-flex">
+                                        <div class="testimonials-photo" style="background-image:url(' . $value['image_testimony'] . ')"></div>
+                                        <div>
+                                            <div class="testimonials-name">' . $value['name_testimony'] . '<br/></div>
+                                            <div class="testimonials-name _2">' . $value['role_testimony'] . '</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+                           }
+
+                        ?>
+                        
+                    </div>
+                    <div class="hide-arrow w-slider-arrow-left">
+                        <div class="w-icon-slider-left"></div>
+                    </div>
+                    <div class="hide-arrow w-slider-arrow-right">
+                        <div class="w-icon-slider-right"></div>
+                    </div>
+                    <div class="slide-nav w-slider-nav w-slider-nav-invert w-round"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section wf-section">
+    <div class="container">
+        <div class="grid-2-columns">
+            <div class="photo-animation">
+                <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/614353de0e19c94d613db4a3_photo-5.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 43vw, 41vw" srcset="https://assets.website-files.com/613f528b6c338d2716ac8cbd/614353de0e19c94d613db4a3_photo-5-p-500.jpeg 500w, https://assets.website-files.com/613f528b6c338d2716ac8cbd/614353de0e19c94d613db4a3_photo-5-p-800.jpeg 800w, https://assets.website-files.com/613f528b6c338d2716ac8cbd/614353de0e19c94d613db4a3_photo-5-p-1080.jpeg 1080w, https://assets.website-files.com/613f528b6c338d2716ac8cbd/614353de0e19c94d613db4a3_photo-5.jpg 1248w" alt="" class="photo"/>
+                <div class="absolute-background _2"></div>
+            </div>
+            <div>
+                <h2 data-w-id="b715968d-942c-11c1-bc48-e7761a9af8aa" style="opacity:0" class="h2-bigger">We worked with the world’s biggest brands and the most innovative startups.<strong><br/></strong></h2>
+                <div class="margin-60px">
+                    <div class="logo-grid">
+                        <?php 
+
+                            Zend_Loader::loadClass("Partner");
+                            $model_partern = new Partner();
+                            
+                            foreach ($model_partern->selectTable() as $value) {
+                                echo ' <div data-w-id="3765e168-2b02-96ec-0c1d-af52f38187e1" style="opacity:1">
+                                            <img src="' . $value['image_partner'] . '" loading="lazy" width="125" alt=""/>
+                                        </div>';
+                           }
+
+                        ?>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div data-w-id="663e623e-5ba0-a931-aa30-38ba1c34f4ab" class="section take-off wf-section">
+    <div class="container">
+        <div class="max-w-width center">
+            <div>
+                <h1 data-w-id="663e623e-5ba0-a931-aa30-38ba1c34f4af" class="display-2">Ready to<span class="title-line _2"> take off?</span></h1>
+            </div>
+        </div>
+    </div>
+    <a href="/contact" class="project-circle black w-inline-block">
+        <div data-w-id="663e623e-5ba0-a931-aa30-38ba1c34f4b4" data-animation-type="lottie" data-src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/614461c3fedaa051c5810cd1_icons8-rocket-384.png" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-duration="0"></div>
+        <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/6144651fafc60da397af27f5_icons8-rocket-192.png" loading="lazy" alt="" class="lottie-animation right _2"/>
+    </a>
+</div>

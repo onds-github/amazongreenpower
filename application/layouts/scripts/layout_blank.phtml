@@ -1,0 +1,39 @@
+<?php echo $this->doctype('HTML5') ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR">
+    <head>
+        <?php
+        echo $this->headTitle($this->title);
+
+        echo $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1')
+                ->setHttpEquiv('Content-Type', 'text/html;charset=UTF-8')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+                ->appendHttpEquiv('language', 'pt-BR')
+                ->appendHttpEquiv('Author', 'ON Digital Service')
+                ->appendName('robots', 'index, follow')
+                ->appendName('title', $this->title)
+                ->appendName('description', $this->description);
+
+        echo $this->headLink()
+                ->appendStylesheet('/public/assets/semantic/semantic.min.css')
+                ->appendStylesheet('/public/assets/uikit/css/uikit.min.css')
+                ->appendStylesheet('/public/modules/default/css/default.css');
+        ?>
+    </head>
+    <body>
+
+        <?php echo $this->layout()->content; ?>
+
+
+        <?php
+        echo $this->headScript()
+                ->prependFile($this->baseUrl('public/library/getuikit/js/uikit-icons.min.js'))
+                ->prependFile($this->baseUrl('public/library/getuikit/js/uikit.min.js'))
+                ->prependFile($this->baseUrl('public/library/semantic/semantic.min.js'))
+                ->prependFile($this->baseUrl('public/config/default.js'))
+                ->prependFile($this->baseUrl('public/library/mask/jquery.mask.min.js'))
+                ->prependFile($this->baseUrl('public/library/jquery/jquery.min.js'));
+        ?>
+
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<section class="uk-section uk-section-muted uk-padding-remove">
+    <div class="uk-container">
+        <div class="uk-grid-divider uk-flex uk-flex-middle" uk-grid uk-height-viewport>
+            <div class="uk-width-1-2@s uk-text-right@s">
+                <div class="uk-card uk-card-body uk-card-muted">
+                    <h1 class="uk-h1 uk-text-primary uk-margin-remove-bottom"><?php echo $this->title ?></h1>
+                    <p class="uk-text-lead uk-margin-remove-top"><?php echo $this->description ?></p>
+                </div>
+            </div>
+
+            <div class="uk-width-1-2@s">
+                <div class="uk-card uk-card-body uk-card-default uk-border-rounded">
+                    <img class="uk-margin-bottom" width="200" src="<?php echo $this->baseUrl('public/modules/default/img/brand/logotipo.png') ?>" alt="logotipo" />
+                    <form class="ui form on-form-forgot">
+                        <div class="field required">
+                            <label>E-mail</label>
+                            <input type="text" name="email" placeholder="seuemail@publiclick.com.br" />
+                        </div> 
+                        <p class="uk-text-meta"><strong>Observação:</strong> Uma nova senha será enviada para o e-mail solicitado.</p>
+                        <button class="uk-button uk-button-primary uk-border-rounded">Enviar</button>
+                    </form>   
+                    <hr class="uk-divider-small" />
+                    <p class="uk-text-meta">Já enviou? <a href="<?php echo $this->baseUrl('account/access') ?>" class="uk-link">Faça login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

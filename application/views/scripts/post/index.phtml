@@ -1,0 +1,103 @@
+<?php 
+
+    Zend_Loader::loadClass("Section");
+    $model = new Section();
+    $result = $model->selectTable(5)[0];
+    $ready = $model->selectTable(6)[0];
+
+?>
+
+<div class="hero sub">
+    <div class="container">
+        <div class="hero-title-flex _100">
+            <?php echo $result['description_short_section'] ?>
+        </div>
+        <div class="margin-20px">
+            <div class="we-are-grid">
+                <div>
+                    <p data-w-id="4ae7ba20-14ae-ddf8-6d84-b9da47de478e" style="opacity:0" class="subhead gray"><?php echo $result['description_long_section'] ?><strong><br/></strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-w-id="4ae7ba20-14ae-ddf8-6d84-b9da47de4792" style="opacity:0" class="flex-lottie">
+        <a href="#down" data-w-id="4ae7ba20-14ae-ddf8-6d84-b9da47de4793" class="social-icon down w-inline-block">
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+            <div data-w-id="4ae7ba20-14ae-ddf8-6d84-b9da47de4795" data-animation-type="lottie" data-src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/6140714b1d7189d6391ea9fc_icons8-down.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="1.1666666666666667" data-duration="0" class="animation-image _4"></div>
+        </a>
+    </div>
+    <div class="social-wrapper left">
+        <a data-w-id="4ae7ba20-14ae-ddf8-6d84-b9da47de4797" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e584debc11e0c9d4225_facebook.png" loading="lazy" width="20" alt="" class="animation-image"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+        <a data-w-id="4ae7ba20-14ae-ddf8-6d84-b9da47de479a" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e58412b62ca34cd5219_twitter.png" loading="lazy" width="20" alt="" class="animation-image"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+        <a data-w-id="4ae7ba20-14ae-ddf8-6d84-b9da47de479d" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e5874d7a635ad9ecf31_instagram.png" loading="lazy" width="20" alt="" class="animation-image"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+        <a data-w-id="4ae7ba20-14ae-ddf8-6d84-b9da47de47a0" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e583ff4391b0bc9191c_linkedin.png" loading="lazy" width="20" alt="" class="animation-image _2"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+    </div>
+</div>
+<div id="down" class="section wf-section">
+    <div class="container">
+        <div class="max-w-width full">
+            <div>
+                <div class="w-dyn-list">
+                    <div role="list" class="blog-grid w-dyn-items">
+                        <?php
+                        
+                        Zend_Loader::loadClass("Post");
+                        $model = new Post();
+                        foreach ($model->selectTableLast() as $value) {
+                            echo '<div role="listitem" class="w-dyn-item">
+                              <a data-w-id="58c629fa-89d9-4c88-21d9-c697e3045a04" style="opacity:0" href="/post/p/?q=' . $value['slug_post'] . '" class="blog-link w-inline-block">
+                                 <div class="button-flex left">
+                                    <p class="category-text">' . date('F j, Y', strtotime($value['date_post'])) . '</p>
+                                    <div class="horizontal-divider _15px"></div>
+                                 </div>
+                                 <div class="blog-text">' . $value['title_post'] . '</div>
+                                 <img src="' . $value['image_post'] . '" loading="lazy" style="display:none" alt="" class="blog-image"/>
+                                 <div class="margin-15px">
+                                    <p class="project-summary w-dyn-bind-empty"></p>
+                                 </div>
+                                 <div class="margin-20px">
+                                    <div class="button-liner">
+                                       <div>
+                                          <div>Read More</div>
+                                          <div class="button-line">
+                                             <div class="button-line-absolute"></div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </a>
+                           </div>';
+                        }
+                        ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-w-id="663e623e-5ba0-a931-aa30-38ba1c34f4ab" class="section take-off wf-section">
+    <div class="container">
+        <div class="max-w-width center">
+            <div>
+                <?php echo $ready['description_short_section'] ?>
+            </div>
+        </div>
+    </div>
+    <a href="/contact" class="project-circle black w-inline-block">
+        <div data-w-id="663e623e-5ba0-a931-aa30-38ba1c34f4b4" data-animation-type="lottie" data-src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/614461c3fedaa051c5810cd1_icons8-rocket-384.png" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-duration="0"></div>
+        <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/6144651fafc60da397af27f5_icons8-rocket-192.png" loading="lazy" alt="" class="lottie-animation right _2"/>
+    </a>
+</div>

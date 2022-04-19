@@ -1,0 +1,133 @@
+<?php echo $this->doctype('HTML5') ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR">
+    <head>
+        <?php
+        echo $this->headTitle($this->title);
+
+        echo $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1')
+                ->setHttpEquiv('Content-Type', 'text/html;charset=UTF-8')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+                ->appendHttpEquiv('language', 'pt-BR')
+                ->appendName('robots', 'noindex, nofollow');
+
+        echo $this->headLink()
+                ->appendStylesheet($this->baseUrl('public/modules/default/css/default.css'))
+                ->appendStylesheet($this->baseUrl('public/library/contextmenu/default.css'))
+                ->appendStylesheet($this->baseUrl('public/library/datatables/complement.semantic.css'))
+                ->appendStylesheet($this->baseUrl('public/library/datatables/select.css'))
+                ->prependStylesheet($this->baseUrl('public/library/getuikit/css/uikit.min.css'))
+                ->prependStylesheet($this->baseUrl('public/library/semantic/semantic.min.css'));
+        ?>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    </head>
+    <body class="uk-background-secondary">
+
+        <div id="on-offcanvas-right" uk-offcanvas="flip: true">
+            <div class="uk-offcanvas-bar">
+
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                <div class="ui secondary vertical fluid menu">
+                    <a class="item" href="/account/user"><span class="material-icons">badge</span> Info. da conta</a>
+                    <a class="item" href="/account/security"><span class="material-icons">admin_panel_settings</span> Segurança</a>
+                    <a class="item" href="/account/access/out"><span class="material-icons">logout</span> Encerrar sessão</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-grid-collapse" uk-grid>
+            <div class="uk-width-medium uk-background-secondary">
+
+                <div class="uk-padding-small uk-margin-top">
+                    <div class="uk-panel uk-padding-small uk-grid-small uk-flex uk-flex-middle" uk-grid>
+                        <div class="uk-width-auto">
+                            <img class="uk-border-circle" src="<?php echo Zend_Auth::getInstance()->getIdentity()->image_user ?>" alt="Image profile" width="32" height="32" />
+                        </div>
+                        <div class="uk-width-expand">
+                            <h4 class="uk-h4 uk-margin-remove-bottom"><?php echo Zend_Auth::getInstance()->getIdentity()->name_user ?></h4>
+                            <p class="uk-text-meta uk-margin-remove-top"><?php echo Zend_Auth::getInstance()->getIdentity()->email_user ?></p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="uk-divider-small" />
+                <div class="uk-padding-small">
+                    <div class="ui secondary vertical fluid menu">
+                        <a class="item" href="/account/dashboard"><span class="material-icons">dashboard</span> Visão geral</a>
+                        <?php
+                        foreach (json_decode(Zend_Auth::getInstance()->getIdentity()->modules, true) as $value) {
+                            echo '<a class="item" href="' . $value['url_module'] . '"><span class="material-icons">' . $value['icon_module'] . '</span> ' . $value['name_module'] . '</a>';
+                        }
+                        ?>
+                    </div>
+
+                </div>
+            </div>
+            <div class="uk-width-expand uk-background-muted" uk-height-viewport>
+                <nav class="uk-navbar-container" uk-navbar>
+                    <div class="uk-navbar-left">
+                        <a href="/account" class="uk-navbar-item uk-logo">Controle Financeiro</a>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <ul class="uk-navbar-nav">
+                            <li class="uk-visible@m">
+                                <a>
+                                    <button class="ui icon circular primary button" type="button" uk-toggle="target: #on-offcanvas-right">
+                                        <span class="material-icons">menu</span>
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                
+                <div class="uk-padding-small">
+                    <div uk-grid>
+                        <div class="uk-width-auto">
+                            <div class="ui secondary vertical menu">
+                                <div class="header item">Config. da empresa</div>
+                                <a class="<?php echo ($this->title == 'Info. da empresa' ? 'active' : '') ?> item" href="/account/company">
+                                    <span class="material-icons">info</span> Info. da empresa
+                                </a>
+                                <a class="<?php echo ($this->title == 'Contas' ? 'active' : '') ?> item" href="/settings/account">
+                                    <span class="material-icons">account_balance_wallet</span> Contas
+                                </a>
+                                <a class="<?php echo ($this->title == 'Plano de contas' ? 'active' : '') ?> item" href="/settings/chart-accounts">
+                                    <span class="material-icons">account_tree</span> Plano de contas
+                                </a>
+                                <a class="<?php echo ($this->title == 'Centro de custos' ? 'active' : '') ?> item" href="/settings/cost-center">
+                                    <span class="material-icons">snippet_folder</span> Centro de custos
+                                </a>
+                                <a class="<?php echo ($this->title == 'Controle de usuários' ? 'active' : '') ?> item" href="/settings/users">
+                                    <span class="material-icons">supervisor_account</span> Controle de usuários
+                                </a>
+                            </div>
+                        </div>
+                        <div class="uk-width-expand@s">
+                            <?php echo $this->layout()->content; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php
+        echo $this->headScript()
+                ->prependFile($this->baseUrl('public/modules/addons/onFormInsert.js'))
+                ->prependFile($this->baseUrl('public/library/moment/default-locales.js'))
+                ->prependFile($this->baseUrl('public/library/moment/default.js'))
+                ->prependFile($this->baseUrl('public/library/contextmenu/default.js'))
+                ->prependFile($this->baseUrl('public/library/datatables/rowgroup.js'))
+                ->prependFile($this->baseUrl('public/library/datatables/complement.semantic.js'))
+                ->prependFile($this->baseUrl('public/library/datatables/default.js'))
+                ->prependFile($this->baseUrl('public/library/getuikit/js/uikit.icon.min.js'))
+                ->prependFile($this->baseUrl('public/library/getuikit/js/uikit.min.js'))
+                ->prependFile($this->baseUrl('public/library/semantic/semantic.min.js'))
+                ->prependFile($this->baseUrl('public/config/default.js'))
+                ->prependFile($this->baseUrl('public/library/mask/jquery.mask.min.js'))
+                ->prependFile($this->baseUrl('public/library/jquery/jquery.min.js'));
+        ?>
+
+    </body>
+</html>

@@ -1,0 +1,214 @@
+<div class="row">
+    <div class="column">
+        <div class="ui breadcrumb">
+            <a class="section" href="/account/dashboard">Início</a>
+            <div class="divider"> / </div>
+            <div class="active section"><?php echo $this->title_page ?></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segments" id="onCardFilter">
+            <div class="ui right aligned segment">
+                <button class="ui <?php echo Zend_Auth::getInstance()->getIdentity()->filter_toggle == 1 ? '' : 'black' ?> icon labeled button uk-float-right" id="onButtonFilter"><?php echo Zend_Auth::getInstance()->getIdentity()->filter_toggle == 1 ? '<i class="eye slash icon"></i> Ocultar' : '<i class="eye icon"></i> Mostrar' ?></button>
+            </div>
+            <div class="ui segment uk-card-body" <?php echo Zend_Auth::getInstance()->getIdentity()->filter_toggle == 1 ? '' : 'style="display:none"' ?>>
+                <form class="ui equal width form" id="onFormFilter">
+                    <div class="fields">
+                        <div class="field">
+                            <label>Tipos de lançamentos</label>
+                            <div class="ui fluid selection dropdown on-dropdown-type-order-filter">
+                                <input type="hidden" name="filter_id_type_order" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_type_order ?>" />
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu">
+                                    <div class="item" data-value="0"><i class="bi text-primary bi-asterisk"></i> Todos</div>
+                                    <div class="item" data-value="1"><i class="bi text-warning bi-node-minus"></i> Contas a receber</div>
+                                    <!--<div class="item" data-value="2"><i class="bi text-danger bi-node-minus"></i> Contas a receber atrasadas</div>-->
+                                    <div class="item" data-value="3"><i class="bi text-success bi-node-minus-fill"></i> Receitas</div>
+                                    <div class="item" data-value="4"><i class="bi text-warning bi-node-plus"></i> Contas a pagar</div>
+                                    <!--<div class="item" data-value="5"><i class="bi text-danger bi-node-plus"></i> Contas a pagar atrasadas</div>-->
+                                    <div class="item" data-value="6"><i class="bi text-success bi-node-plus-fill"></i> Despesas</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Clientes / Fornecedores</label>
+                            <div class="ui search selection fluid dropdown on-dropdown-contact">
+                                <input type="hidden" name="filter_id_contact" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_contact ?>" />
+                                <i class="dropdown icon"></i>
+                                <input type="text" class="search" tabindex="0" />
+                                <span class="sizer"></span>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu" tabindex="-1"></div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Contas</label>
+                            <div class="ui search selection fluid dropdown on-dropdown-account">
+                                <input type="hidden" name="filter_id_account" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_account ?>" />
+                                <i class="dropdown icon"></i>
+                                <input type="text" class="search" tabindex="0" />
+                                <span class="sizer"></span>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu" tabindex="-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="field">
+                            <label>Planos de conta</label>
+                            <div class="ui search selection fluid dropdown button on-dropdown-chart-accounts">
+                                <input type="hidden" name="filter_id_chart_accounts" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_chart_accounts ?>" />
+                                <i class="dropdown icon"></i>
+                                <input type="text" class="search" tabindex="0" />
+                                <span class="sizer"></span>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu" tabindex="-1"></div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Centro de custos</label>
+                            <div class="ui search selection fluid dropdown button on-dropdown-cost-center">
+                                <input type="hidden" name="filter_id_cost_center" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_cost_center ?>" />
+                                <i class="dropdown icon"></i>
+                                <input type="text" class="search" tabindex="0" />
+                                <span class="sizer"></span>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu" tabindex="-1"></div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Tipo de data</label>
+                            <div class="ui fluid selection dropdown on-dropdown-type-date">
+                                <input type="hidden" name="filter_id_type_date" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_type_date ?>" />
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu">
+                                    <div class="item" data-value="1">Emissão</div>
+                                    <div class="item" data-value="2">Vencimento</div>
+                                    <div class="item" data-value="3">Baixado</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Período</label>
+                            <div class="ui fluid selection dropdown on-dropdown-type-period">
+                                <input type="hidden" name="filter_id_type_period" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_type_period ?>" />
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu">
+                                    <div class="item" data-value="1">Hoje</div>
+                                    <div class="item" data-value="2">Esta semana</div>
+                                    <div class="item" data-value="3">Este mês</div>
+                                    <div class="item" data-value="4">Este ano</div>
+                                    <div class="item" data-value="9">Personalizado</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields" id="onColFilterPeriod" style="display: <?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_type_period == 9 ? 'flex' : 'none' ?>">
+                        <div class="field">
+                            <label>De</label>
+                            <input type="date" name="filter_period_min" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_period_min ?>" />
+                        </div>
+                        <div class="field">
+                            <label>Até</label>
+                            <input type="date" name="filter_period_max" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_period_max ?>" />
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="field">
+                            <button class="ui primary button" type="submit">Filtrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segment">
+            <table class="ui celled selectable table" id="onTableAccount">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Nome</th>
+                        <th>Conta</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalCreate">
+    <div class="header">Nova conta</div>
+    <div class="content">
+        <form class="ui equal width form">
+            <div class="fields">
+                <div class="field required">
+                    <label>Nome</label>
+                    <input type="text" name="name_account" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Tipo</label>
+                    <select class="ui dropdown" name="id_account_type">
+                        <option value="1">Conta Corrente</option>
+                        <option value="2">Conta Poupança</option>
+                        <option value="3">Caixa</option>
+                        <option value="4">Cartão de Crédito</option>
+                    </select>
+                </div>
+                <div class="field required">
+                    <label>Conta</label>
+                    <input type="text" name="debit_account" placeholder="Informe..." />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Cancelar</button>
+        <button class="ui labeled icon primary ok button"><i class="check icon"></i> Salvar</button>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalUpdate">
+    <div class="header">Atualizar conta</div>
+    <div class="content">
+        <form class="ui form">
+            <div class="fields">
+                <div class="field required">
+                    <label>Nome</label>
+                    <input type="text" name="name_account" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Tipo</label>
+                    <select class="ui dropdown" name="id_account_type">
+                        <option value="1">Conta Corrente</option>
+                        <option value="2">Conta Poupança</option>
+                        <option value="3">Caixa</option>
+                        <option value="4">Cartão de Crédito</option>
+                    </select>
+                </div>
+                <div class="field required">
+                    <label>Conta</label>
+                    <input type="text" name="debit_account" placeholder="Informe..." />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Cancelar</button>
+        <button class="ui labeled icon primary ok button"><i class="check icon"></i> Salvar</button>
+    </div>
+</div>

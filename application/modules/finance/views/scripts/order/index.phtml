@@ -1,0 +1,804 @@
+<div class="row">
+    <div class="column">
+        <div class="ui breadcrumb">
+            <a class="section" href="/account/dashboard">Início</a>
+            <div class="divider"> / </div>
+            <div class="active section"><?php echo $this->title_page ?></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segments" id="onCardFilter">
+            <div class="ui right aligned segment">
+                <button class="ui <?php echo Zend_Auth::getInstance()->getIdentity()->filter_toggle == 1 ? '' : 'black' ?> icon labeled button uk-float-right" id="onButtonFilter"><?php echo Zend_Auth::getInstance()->getIdentity()->filter_toggle == 1 ? '<i class="eye slash icon"></i> Ocultar' : '<i class="eye icon"></i> Mostrar' ?></button>
+            </div>
+            <div class="ui segment uk-card-body" <?php echo Zend_Auth::getInstance()->getIdentity()->filter_toggle == 1 ? '' : 'style="display:none"' ?>>
+                <form class="ui equal width form" id="onFormFilter">
+                    <div class="fields">
+                        <div class="field">
+                            <label>Tipos de lançamentos</label>
+                            <div class="ui fluid selection dropdown on-dropdown-type-order-filter">
+                                <input type="hidden" name="filter_id_type_order" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_type_order ?>" />
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu">
+                                    <div class="item" data-value="0"><i class="bi text-primary bi-asterisk"></i> Todos</div>
+                                    <div class="item" data-value="1"><i class="bi text-warning bi-node-minus"></i> Contas a receber</div>
+                                    <!--<div class="item" data-value="2"><i class="bi text-danger bi-node-minus"></i> Contas a receber atrasadas</div>-->
+                                    <div class="item" data-value="3"><i class="bi text-success bi-node-minus-fill"></i> Receitas</div>
+                                    <div class="item" data-value="4"><i class="bi text-warning bi-node-plus"></i> Contas a pagar</div>
+                                    <!--<div class="item" data-value="5"><i class="bi text-danger bi-node-plus"></i> Contas a pagar atrasadas</div>-->
+                                    <div class="item" data-value="6"><i class="bi text-success bi-node-plus-fill"></i> Despesas</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Cadastro</label>
+                            <div class="ui search selection fluid dropdown on-dropdown-contact">
+                                <input type="hidden" name="filter_id_contact" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_contact ?>" />
+                                <i class="dropdown icon"></i>
+                                <input type="text" class="search" tabindex="0" />
+                                <span class="sizer"></span>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu" tabindex="-1"></div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Contas</label>
+                            <div class="ui search selection fluid dropdown on-dropdown-account">
+                                <input type="hidden" name="filter_id_account" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_account ?>" />
+                                <i class="dropdown icon"></i>
+                                <input type="text" class="search" tabindex="0" />
+                                <span class="sizer"></span>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu" tabindex="-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="field">
+                            <label>Planos de conta</label>
+                            <div class="ui search selection fluid dropdown button on-dropdown-chart-accounts">
+                                <input type="hidden" name="filter_id_chart_accounts" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_chart_accounts ?>" />
+                                <i class="dropdown icon"></i>
+                                <input type="text" class="search" tabindex="0" />
+                                <span class="sizer"></span>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu" tabindex="-1"></div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Centro de custos</label>
+                            <div class="ui search selection fluid dropdown button on-dropdown-cost-center">
+                                <input type="hidden" name="filter_id_cost_center" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_cost_center ?>" />
+                                <i class="dropdown icon"></i>
+                                <input type="text" class="search" tabindex="0" />
+                                <span class="sizer"></span>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu" tabindex="-1"></div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Tipo de data</label>
+                            <div class="ui fluid selection dropdown on-dropdown-type-date">
+                                <input type="hidden" name="filter_id_type_date" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_type_date ?>" />
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu">
+                                    <div class="item" data-value="1">Emissão</div>
+                                    <div class="item" data-value="2">Vencimento</div>
+                                    <div class="item" data-value="3">Baixado</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Período</label>
+                            <div class="ui fluid selection dropdown on-dropdown-type-period">
+                                <input type="hidden" name="filter_id_type_period" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_type_period ?>" />
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu">
+                                    <div class="item" data-value="1">Hoje</div>
+                                    <div class="item" data-value="2">Esta semana</div>
+                                    <div class="item" data-value="3">Este mês</div>
+                                    <div class="item" data-value="4">Este ano</div>
+                                    <div class="item" data-value="9">Personalizado</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields" id="onColFilterPeriod" style="display: <?php echo Zend_Auth::getInstance()->getIdentity()->filter_id_type_period == 9 ? 'flex' : 'none' ?>">
+                        <div class="field">
+                            <label>De</label>
+                            <input type="date" name="filter_period_min" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_period_min ?>" />
+                        </div>
+                        <div class="field">
+                            <label>Até</label>
+                            <input type="date" name="filter_period_max" value="<?php echo Zend_Auth::getInstance()->getIdentity()->filter_period_max ?>" />
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="field">
+                            <button class="ui primary button" type="submit">Filtrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segment">
+            <table class="ui celled selectable table" id="onTableOrder">
+                <thead>
+                    <tr>
+                        <th class="select-checkbox"></th>
+                        <th>Ref.</th>
+                        <th>Descrição</th>
+                        <th>Cadastro</th>
+                        <th>Conta</th>
+                        <th>Centro de custo</th>
+                        <th>Planos de conta</th>
+                        <th>Competência</th>
+                        <th>Emissão</th>
+                        <th>Vencimento</th>
+                        <th>Data (Baixa)</th>
+                        <th>Valor parcial</th>
+                        <th>Desconto</th>
+                        <th>Juros</th>
+                        <th>Adicional</th>
+                        <th>Valor (Baixa)</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--Modal de cadastro para lançamentos de entrada-->
+<div class="ui modal" id="onModalCreateIn">
+    <i class="close icon"></i>
+    <div class="header">
+        Novo lançamento de entrada
+    </div>
+    <div class="content">
+        <form class="ui equal width form">
+            <input type="hidden" name="id_type_order" value="1" />
+            <div class="fields">
+                <div class="four wide field">
+                    <label>Referência</label>
+                    <input type="text" name="reference_order" />
+                </div>
+                <div class="field required">
+                    <label>Descrição</label>
+                    <input type="text" name="description_order" placeholder="Informe..." />
+                </div>
+                <div class="field required">
+                    <label id="onLabelContact">Cadastro</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-contact">
+                            <input type="hidden" name="id_contact">
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/account/contact" target="_blank" data-inverted="" data-tooltip="Clique para adicionar ou gerenciar os cadastros" data-position="top right"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Conta</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-account">
+                            <input type="hidden" name="id_account">
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/settings/account" target="_blank" data-inverted="" data-tooltip="Clique para adicionar ou gerenciar as contas" data-position="top right"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Planos de Conta</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-chart-accounts">
+                            <input type="hidden" name="id_chart_accounts" />
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/settings/chart-accounts" target="_blank" data-inverted="" data-tooltip="Clique para adicionar ou gerenciar os planos de conta" data-position="top right"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Centro de Custo</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-cost-center">
+                            <input type="hidden" name="id_cost_center">
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/settings/cost-center" target="_blank" data-inverted="" data-tooltip="Clique para adicionar ou gerenciar os centro de custos" data-position="top right"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Emissão</label>
+                    <input type="date" name="date_issue_order" />
+                </div>
+                <div class="four wide field">
+                    <label>Competência</label>
+                    <input type="month" name="date_competence_order" />
+                </div>
+                <div class="field required">
+                    <label>Vencimento</label>
+                    <input type="date" name="date_due_order" />
+                </div>
+                <div class="field required">
+                    <label>Valor</label>
+                    <input type="text" name="price_order" placeholder="Informe..." class="on-mask-money" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="three wide field required">
+                    <label>Baixa</label>
+                    <div class="ui fluid selection dropdown on-dropdown-situation-order">
+                        <input type="hidden" name="situation_order" value="0" />
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Selecione...</div>
+                        <div class="menu">
+                            <div class="item" data-value="0">Não</div>
+                            <div class="item" data-value="1">Sim</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="fields onSituationOrderFields" style="display: none">
+                        <div class="field">
+                            <label id="onLabelDatePaymentOrder">Data (Baixa)</label>
+                            <div class="ui corner labeled input">
+                                <input type="date" name="date_payment_order" />
+                                <div class="ui corner label" title="Se a data não for preenchida, o sistema preencherá automaticamente o campo com a data de hoje!">
+                                    <i class="info icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Desconto (-)</label>
+                            <input type="text" name="price_discount_order" class="on-mask-money" />
+                        </div>
+                        <div class="field">
+                            <label>Acréscimo (+)</label>
+                            <input type="text" name="price_addition_order" class="on-mask-money" />
+                        </div>
+                        <div class="field">
+                            <label>Juros (+)</label>
+                            <input type="text" name="price_fees_order" class="on-mask-money" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="three wide field required">
+                    <label>Repetir</label>
+                    <div class="ui fluid selection dropdown on-dropdown-repeat-order">
+                        <input type="hidden" name="repeat_order" value="0" />
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Selecione...</div>
+                        <div class="menu">
+                            <div class="item" data-value="0">Não</div>
+                            <div class="item" data-value="1">Sim</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="fields onRepeatOrderFields" style="display: none">
+                        <div class="field">
+                            <label>Quantidade</label>
+                            <input type="text" name="id_repeat_quantity" />
+                        </div>
+                        <div class="field">
+                            <label>Período</label>
+                            <div class="ui fluid selection dropdown on-dropdown-repeat-period">
+                                <input type="hidden" name="id_repeat_period" />
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu">
+                                    <div class="item" data-value="5">Mensal</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <div class="ui secondary deny button">
+            Cancelar
+        </div>
+        <div class="ui primary ok right labeled icon button">
+            Salvar
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>
+
+<!--Modal de cadastro para lançamentos de saída-->
+<div class="ui modal" id="onModalCreateOut">
+    <i class="close icon"></i>
+    <div class="header">
+        Novo lançamento de saída
+    </div>
+    <div class="content">
+        <form class="ui equal width form">
+            <input type="hidden" name="id_type_order" value="2" />
+            <div class="fields">
+                <div class="four wide field">
+                    <label>Referência</label>
+                    <input type="text" name="reference_order" />
+                </div>
+                <div class="field required">
+                    <label>Descrição</label>
+                    <input type="text" name="description_order" placeholder="Informe..." />
+                </div>
+                <div class="field required">
+                    <label id="onLabelContact">Cadastro</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-contact">
+                            <input type="hidden" name="id_contact">
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/account/contact" target="_blank" data-inverted="" data-tooltip="Clique para adicionar ou gerenciar os cadastros" data-position="top right"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Conta</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-account">
+                            <input type="hidden" name="id_account">
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/settings/account" target="_blank" data-inverted="" data-tooltip="Clique para adicionar ou gerenciar as contas" data-position="top right"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Planos de Conta</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-chart-accounts">
+                            <input type="hidden" name="id_chart_accounts" />
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/settings/chart-accounts" target="_blank" data-inverted="" data-tooltip="Clique para adicionar ou gerenciar os planos de conta" data-position="top right"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Centro de Custo</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-cost-center">
+                            <input type="hidden" name="id_cost_center">
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/settings/cost-center" target="_blank" data-inverted="" data-tooltip="Clique para adicionar ou gerenciar os centro de custos" data-position="top right"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Emissão</label>
+                    <input type="date" name="date_issue_order" />
+                </div>
+                <div class="four wide field">
+                    <label>Competência</label>
+                    <input type="month" name="date_competence_order" />
+                </div>
+                <div class="field required">
+                    <label>Vencimento</label>
+                    <input type="date" name="date_due_order" />
+                </div>
+                <div class="field required">
+                    <label>Valor</label>
+                    <input type="text" name="price_order" placeholder="Informe..." class="on-mask-money" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="three wide field required">
+                    <label>Baixa</label>
+                    <div class="ui fluid selection dropdown on-dropdown-situation-order">
+                        <input type="hidden" name="situation_order" value="0" />
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Selecione...</div>
+                        <div class="menu">
+                            <div class="item" data-value="0">Não</div>
+                            <div class="item" data-value="1">Sim</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="fields onSituationOrderFields" style="display: none">
+                        <div class="field">
+                            <label id="onLabelDatePaymentOrder">Data (Baixa)</label>
+                            <div class="ui corner labeled input">
+                                <input type="date" name="date_payment_order" />
+                                <div class="ui corner label" title="Se a data não for preenchida, o sistema preencherá automaticamente o campo com a data de hoje!">
+                                    <i class="info icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Desconto (-)</label>
+                            <input type="text" name="price_discount_order" class="on-mask-money" />
+                        </div>
+                        <div class="field">
+                            <label>Acréscimo (+)</label>
+                            <input type="text" name="price_addition_order" class="on-mask-money" />
+                        </div>
+                        <div class="field">
+                            <label>Juros (+)</label>
+                            <input type="text" name="price_fees_order" class="on-mask-money" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="three wide field required">
+                    <label>Repetir</label>
+                    <div class="ui fluid selection dropdown on-dropdown-repeat-order">
+                        <input type="hidden" name="repeat_order" value="0" />
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Selecione...</div>
+                        <div class="menu">
+                            <div class="item" data-value="0">Não</div>
+                            <div class="item" data-value="1">Sim</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="fields onRepeatOrderFields" style="display: none">
+                        <div class="field">
+                            <label>Quantidade</label>
+                            <input type="text" name="id_repeat_quantity" />
+                        </div>
+                        <div class="field">
+                            <label>Período</label>
+                            <div class="ui fluid selection dropdown on-dropdown-repeat-period">
+                                <input type="hidden" name="id_repeat_period" />
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione...</div>
+                                <div class="menu">
+                                    <div class="item" data-value="5">Mensal</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <div class="ui secondary deny button">
+            Cancelar
+        </div>
+        <div class="ui primary ok right labeled icon button">
+            Salvar
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>
+
+<!--Modal de atualização para lançamentos-->
+<div class="ui modal" id="onModalUpdate">
+    <i class="close icon"></i>
+    <div class="header">
+        Editar lançamento
+    </div>
+    <div class="content">
+        <form class="ui equal width form">
+            <div class="fields">
+                <div class="four wide field">
+                    <label>Referência</label>
+                    <input type="text" name="reference_order" />
+                </div>
+                <div class="field required">
+                    <label>Descrição</label>
+                    <input type="text" name="description_order" placeholder="Informe..." />
+                </div>
+                <div class="field required">
+                    <label id="onLabelContact">Cadastro</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-contact">
+                            <input type="hidden" name="id_contact">
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/account/contact" target="_blank" data-inverted="" data-tooltip="Clique para adicionar ou gerenciar os cadastros" data-position="top right"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Conta</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-account">
+                            <input type="hidden" name="id_account">
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/settings/account" target="_blank" data-inverted="" data-tooltip="Clique para adicionar ou gerenciar as contas" data-position="top right"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Planos de Conta</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-chart-accounts">
+                            <input type="hidden" name="id_chart_accounts" />
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/settings/chart-accounts" target="_blank" data-inverted="" data-tooltip="Clique para adicionar ou gerenciar os planos de conta" data-position="top right"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Centro de Custo</label>
+                    <div class="ui input">
+                        <div class="ui fluid search selection dropdown on-dropdown-cost-center">
+                            <input type="hidden" name="id_cost_center">
+                            <i class="dropdown icon"></i>
+                            <input type="text" class="search" tabindex="0" />
+                            <span class="sizer"></span>
+                            <div class="default text">Selecione...</div>
+                            <div class="menu" tabindex="-1"></div>
+                        </div>
+                        <a class="ui secondary icon button uk-margin-left" href="/settings/cost-center" target="_blank" data-inverted="" data-tooltip="Clique para adicionar ou gerenciar os centro de custos" data-position="top right"><i class="external alternate icon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Emissão</label>
+                    <input type="date" name="date_issue_order" />
+                </div>
+                <div class="four wide field">
+                    <label>Competência</label>
+                    <input type="month" name="date_competence_order" />
+                </div>
+                <div class="field required">
+                    <label>Vencimento</label>
+                    <input type="date" name="date_due_order" />
+                </div>
+                <div class="field required">
+                    <label>Valor parcial</label>
+                    <input type="text" name="price_order" placeholder="Informe..." class="on-mask-money" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="three wide field required">
+                    <label>Baixa</label>
+                    <div class="ui fluid selection dropdown on-dropdown-situation-order">
+                        <input type="hidden" name="situation_order" value="0" />
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Selecione...</div>
+                        <div class="menu">
+                            <div class="item" data-value="0">Não</div>
+                            <div class="item" data-value="1">Sim</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="fields onSituationOrderFields" style="display: none">
+                        <div class="field">
+                            <label id="onLabelDatePaymentOrder">Data (Baixa)</label>
+                            <div class="ui corner labeled input">
+                                <input type="date" name="date_payment_order" />
+                                <div class="ui corner label" title="Se a data não for preenchida, o sistema preencherá automaticamente o campo com a data de hoje!">
+                                    <i class="info icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Desconto (-)</label>
+                            <input type="text" name="price_discount_order" class="on-mask-money" />
+                        </div>
+                        <div class="field">
+                            <label>Acréscimo (+)</label>
+                            <input type="text" name="price_addition_order" class="on-mask-money" />
+                        </div>
+                        <div class="field">
+                            <label>Juros (+)</label>
+                            <input type="text" name="price_fees_order" class="on-mask-money" />
+                        </div>
+                        <div class="field">
+                            <label>Valor (Baixa)</label>
+                            <div class="ui corner labeled input">
+                                <input type="text" name="price_down" class="on-mask-money" />
+                                <div class="ui corner label" title="Se o valor não for preenchido, o sistema preencherá o campo com o total calculado (Valor parcial - Desconto + Juros + Acréscimos). Se o valor for preenchido e o mesmo for menor que o valor parcial, um novo lançamento será gerado com a diferença entre os valores.">
+                                    <i class="info icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <div class="ui secondary deny button">
+            Cancelar
+        </div>
+        <div class="ui primary ok right labeled icon button">
+            Salvar
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>
+
+<div class="ui modal on-modal-receipt">
+    <div class="content" id="on-print-receipt">
+
+        <div class="uk-grid-small" uk-grid>
+            <div class="uk-width-1-1 uk-text-center">
+                <h2 class="uk-h2 uk-margin-remove">Recibo</h2>
+            </div>
+        </div>
+        <div class="uk-grid-small" uk-grid>
+            <div class="uk-width-small">
+
+                <?php
+                $path = "https://wtech.solutions/public/modules/default/img/brand/logotipo.png";
+                $type = pathinfo($path, PATHINFO_EXTENSION);
+                $data = file_get_contents($path);
+                $base64 = "data:image/" . $type . ";base64," . base64_encode($data);
+                ?>
+                <img src="<?php echo $base64 ?>">
+            </div>
+            <div class="uk-width-expand">
+                <h3 class="uk-h3 uk-margin-remove"><?php echo Zend_Auth::getInstance()->getIdentity()->name_company ?></h3>
+                <h4 class="uk-h4 uk-margin-remove"><?php echo Zend_Auth::getInstance()->getIdentity()->document_company ?></h4>
+
+            </div>
+            <div class="uk-width-expand">
+                <p class="uk-text-meta uk-margin-remove">
+                    <?php echo Zend_Auth::getInstance()->getIdentity()->public_place_company ?>, 
+                    <?php echo Zend_Auth::getInstance()->getIdentity()->number_company ?>. 
+                </p>
+                <p class="uk-text-meta uk-margin-remove">
+                    <?php echo Zend_Auth::getInstance()->getIdentity()->complement_company ?>.
+                    <?php echo Zend_Auth::getInstance()->getIdentity()->district_company ?>.
+                </p>
+                <p class="uk-text-meta uk-margin-remove">
+                    <?php echo Zend_Auth::getInstance()->getIdentity()->city_company ?> - 
+                    <?php echo Zend_Auth::getInstance()->getIdentity()->state_company ?>.
+                    <?php echo Zend_Auth::getInstance()->getIdentity()->zipcode_company ?>.
+                </p>
+                <p class="uk-text-meta uk-margin-remove"><?php echo Zend_Auth::getInstance()->getIdentity()->email_company ?></p>
+                <p class="uk-text-meta uk-margin-remove"><?php echo Zend_Auth::getInstance()->getIdentity()->phone_primary_company ?></p>
+
+            </div>
+        </div>
+        <hr class="ui divider" />
+        <div class="uk-grid-small" uk-grid>
+            <div class="uk-width-1-2@s">
+                <table class="ui very basic compact unstackable table">
+                    <tbody>
+                        <tr>
+                            <td>Cliente:</td>
+                            <td class="uk-text-right">
+                                <span class="document_contact"></span> - <span class="nickname_contact"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Referência:</td>
+                            <td class="uk-text-right reference_order"></td>
+                        </tr>
+                        <tr>
+                            <td>Descrição:</td>
+                            <td class="uk-text-right description_order"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="uk-width-1-2@s">
+                <table class="ui very basic compact unstackable table">
+                    <tbody>
+                        <tr>
+                            <td>Emissão:</td>
+                            <td class="uk-text-right date_issue_order"></td>
+                        </tr>
+                        <tr>
+                            <td>Competência:</td>
+                            <td class="uk-text-right date_competence_order"></td>
+                        </tr>
+                        <tr>
+                            <td>Vencimento:</td>
+                            <td class="uk-text-right date_due_order"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="uk-flex uk-flex-right uk-grid-small" uk-grid>
+            <div class="uk-width-1-2@s">
+                <table class="ui very basic compact unstackable table">
+                    <tbody>
+                        <tr>
+                            <td>Subtotal:</td>
+                            <td class="uk-text-right price_order"></td>
+                        </tr>
+                        <tr>
+                            <td>Desconto:</td>
+                            <td class="uk-text-right price_discount_order"></td>
+                        </tr>
+                        <tr>
+                            <td>Juros:</td>
+                            <td class="uk-text-right price_fees_order"></td>
+                        </tr>
+                        <tr>
+                            <td>Acréscimo:</td>
+                            <td class="uk-text-right price_addition_order"></td>
+                        </tr>
+                        <tr>
+                            <td class="uk-text-bold">Valor Total:</td>
+                            <td class="uk-text-right total_order"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Fechar</button>
+        <button class="ui labeled icon green ok button"><i class="print icon"></i> Imprimir</button>
+    </div>
+</div>
+
+<form class="ui form on-form-file" style="display: none">
+    <div class="field">
+        <input type="file" name="file" />
+    </div>                
+</form>
+
+

@@ -1,0 +1,259 @@
+<div class="row">
+    <div class="column">
+        <div class="ui breadcrumb">
+            <a class="section" href="/account/dashboard">Início</a>
+            <div class="divider"> / </div>
+            <div class="active section"><?php echo $this->title_page ?></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segment">
+            <table class="ui celled selectable table" id="onTableContact">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Documento</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Telefone</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalCreate">
+    <div class="header">Novo Registro</div>
+    <div class="content">
+        <form class="ui equal width form">
+            <div class="fields">
+                <div class="field">
+                    <label>Código</label>
+                    <input type="text" name="code_external_contact" class="on-mask-document" />
+                </div>
+                <div class="field required">
+                    <label>Documento (CPF/CNPJ)</label>
+                    <input type="text" name="document_contact" class="on-mask-document" />
+                </div>
+                <div class="field required">
+                    <label>Nome / Razão Social</label>
+                    <input type="text" name="name_contact" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Apelido / Nome Fantasia</label>
+                    <input type="text" name="nickname_contact" />
+                </div>
+                <div class="field">
+                    <label>E-mail</label>
+                    <input type="text" name="email_contact" />
+                </div>
+                <div class="field">
+                    <label>Telefone</label>
+                    <input type="text" name="phone_primary_contact" class="on-mask-phone" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Cliente</label>
+                    <select class="ui dropdown" name="client_contact">
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Fornecedor</label>
+                    <select class="ui dropdown" name="provider_contact">
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                </div>
+            </div>
+            <div class="ui divider"></div>
+            <div class="fields">
+                <div class="field">
+                    <label>CEP</label>
+                    <input type="text" name="zipcode_contact" class="on-viacep-zipcode on-mask-zipcode" />
+                    <p>Preenchimento automático</p>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Logradouro</label>
+                    <input type="text" name="public_place_contact" class="on-viacep-public-place" />
+                </div>
+                <div class="field">
+                    <label>Número</label>
+                    <input type="text" name="number_contact" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Complemento</label>
+                    <input type="text" name="complement_contact" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Bairro</label>
+                    <input type="text" name="district_contact" class="on-viacep-district" />
+                </div>
+                <div class="field">
+                    <label>Cidade</label>
+                    <input type="text" name="city_contact" class="on-viacep-city" />
+                </div>
+                <div class="field">
+                    <label>UF</label>
+                    <input type="text" name="state_contact" class="on-viacep-state" />
+                </div>
+            </div>
+            <div class="ui divider"></div>
+            <div class="fields">
+                <div class="field">
+                    <label>Telefone 2</label>
+                    <input type="text" name="phone_secondary_contact" class="on-mask-phone" />
+                </div>
+                <div class="field">
+                    <label>Website</label>
+                    <input type="text" name="website_contact" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Observação</label>
+                    <textarea name="observation_contact" rows="4"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Cancelar</button>
+        <button class="ui labeled icon primary ok button"><i class="check icon"></i> Salvar</button>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalUpdate">
+    <div class="header">Atualizar Registro</div>
+    <div class="content">
+        <form class="ui equal width form">
+            <div class="fields">
+                <div class="field">
+                    <label>Código</label>
+                    <input type="text" name="code_external_contact" class="on-mask-document" />
+                </div>
+                <div class="field required">
+                    <label>Documento (CPF/CNPJ)</label>
+                    <input type="text" name="document_contact" class="on-mask-document" />
+                </div>
+                <div class="field required">
+                    <label>Nome / Razão Social</label>
+                    <input type="text" name="name_contact" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Apelido / Nome Fantasia</label>
+                    <input type="text" name="nickname_contact" />
+                </div>
+                <div class="field">
+                    <label>E-mail</label>
+                    <input type="text" name="email_contact" />
+                </div>
+                <div class="field">
+                    <label>Telefone</label>
+                    <input type="text" name="phone_primary_contact" class="on-mask-phone" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Cliente</label>
+                    <select class="ui dropdown" name="client_contact">
+                        <option value="1">Sim</option>
+                        <option value="2">Não</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Fornecedor</label>
+                    <select class="ui dropdown" name="provider_contact">
+                        <option value="1">Sim</option>
+                        <option value="2">Não</option>
+                    </select>
+                </div>
+            </div>
+            <div class="ui divider"></div>
+            <div class="fields">
+                <div class="field">
+                    <label>CEP</label>
+                    <input type="text" name="zipcode_contact" class="on-viacep-zipcode on-mask-zipcode" />
+                    <p>Preenchimento automático</p>
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Logradouro</label>
+                    <input type="text" name="public_place_contact" class="on-viacep-public-place" />
+                </div>
+                <div class="field">
+                    <label>Número</label>
+                    <input type="text" name="number_contact" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Complemento</label>
+                    <input type="text" name="complement_contact" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Bairro</label>
+                    <input type="text" name="district_contact" class="on-viacep-district" />
+                </div>
+                <div class="field">
+                    <label>Cidade</label>
+                    <input type="text" name="city_contact" class="on-viacep-city" />
+                </div>
+                <div class="field">
+                    <label>UF</label>
+                    <input type="text" name="state_contact" class="on-viacep-state" />
+                </div>
+            </div>
+            <div class="ui divider"></div>
+            <div class="fields">
+                <div class="field">
+                    <label>Telefone 2</label>
+                    <input type="text" name="phone_secondary_contact" class="on-mask-phone" />
+                </div>
+                <div class="field">
+                    <label>Website</label>
+                    <input type="text" name="website_contact" />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <label>Observação</label>
+                    <textarea name="observation_contact" rows="4"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Cancelar</button>
+        <button class="ui labeled icon primary ok button"><i class="check icon"></i> Salvar</button>
+    </div>
+</div>
+
+
+<form class="ui form on-form-file" style="display: none">
+    <div class="field">
+        <input type="file" name="file" />
+    </div>
+</form>
+

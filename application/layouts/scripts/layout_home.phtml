@@ -1,0 +1,143 @@
+<?php echo $this->doctype('HTML5') ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110302100-11"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-110302100-11');
+        </script>
+
+
+        <?php
+        echo $this->headTitle($this->title);
+
+        echo $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1')
+                ->setHttpEquiv('Content-Type', 'text/html;charset=UTF-8')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+                ->appendHttpEquiv('language', 'pt-BR')
+                ->appendHttpEquiv('Author', 'Department web')
+                ->appendHttpEquiv('reply-to', 'suporte@onds.com.br')
+                ->appendName('robots', 'index, follow')
+                ->appendName('description', 'Consultoria e Contabilidade');
+
+        echo $this->headLink()
+                ->prependStylesheet($this->baseUrl('public/modules/application/css/default.css'))
+                ->prependStylesheet($this->baseUrl('public/library/getuikit/css/uikit.min.css'))
+                ->prependStylesheet($this->baseUrl('public/library/semantic/semantic.min.css'));
+        ?>
+
+    </head>
+    <body>
+
+
+        <div class="uk-offcanvas-content">
+
+            <!--offcanvas-menu-->
+            <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true; flip: true" class="uk-offcanvas">
+                <div class="uk-offcanvas-bar">
+                    <button class="uk-offcanvas-close uk-close uk-icon" type="button" uk-close=""><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" ratio="1"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+                    <ul class="uk-nav-default uk-nav-parent-icon uk-nav" uk-nav="">
+                        <li><a href="<?php echo $this->baseUrl('/') ?>">INÍCIO</a></li>
+                        <li><a href="<?php echo $this->baseUrl('sobre') ?>">A EMPRESA</a></li>
+                        <li>
+                            <a href="<?php echo $this->baseUrl('produto') ?>">SISTEMAS</a>
+                            <ul class="uk-nav-sub">
+                                <li><a href="<?php echo $this->baseUrl('produto/icom') ?>">ICOM</a></li>
+                                <li><a href="<?php echo $this->baseUrl('produto/safc') ?>">SAFC</a></li>
+                                <li><a href="<?php echo $this->baseUrl('produto/sigs') ?>">SIGS</a></li>
+                                <li class="uk-nav-divider"></li>
+                                <li><a href="<?php echo $this->baseUrl('produto/siscopesca') ?>">SISCOPESCA</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="<?php echo $this->baseUrl('servico') ?>">SERVIÇOS</a>
+                            <ul class="uk-nav-sub">
+                                <li><a href="<?php echo $this->baseUrl('servico/contabilidade') ?>">CONTABILIDADE</a></li>
+                                <li><a href="<?php echo $this->baseUrl('servico/treinamentos') ?>">TREINAMENTOS</a></li>
+                                <li><a href="<?php echo $this->baseUrl('servico/licitacao') ?>">LICITAÇÕES</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="<?php echo $this->baseUrl('contato') ?>">CONTATO</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pusher">
+                <div class="full height">
+                    <div class="content-system">
+                        <?php echo $this->layout()->content; ?>
+
+                        <footer class="uk-section">
+                            <div class="uk-container">
+                                <div class="uk-grid-divider" uk-grid>
+                                    <div class="uk-width-2-3@s">
+                                        <h4 class="uk-h4 uk-text-primary">A empresa</h4>
+                                        <p class="uk-text-meta">A Pararisk está no mercado há mais de 10 anos, oferecendo qualidade nos seus serviços.</p>
+                                        <ul class="uk-iconnav">
+                                            <li><a href="<?php echo INSTAGRAM ?>" uk-icon="icon: instagram"></a></li>
+                                            <li><a href="<?php echo WHATSAPP ?>" uk-icon="icon: whatsapp"></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="uk-width-1-3@s uk-text-right">
+                                        <h4 class="uk-h4 uk-text-primary">Contatos</h4>
+                                        <p class="uk-text-meta"><?php echo TELEFONE_1 ?> <span uk-icon="receiver"></span></p>
+                                        <p class="uk-text-meta"><?php echo TELEFONE_2 ?> <span uk-icon="receiver"></span></p>
+                                        <p class="uk-text-meta"><?php echo ENDERECO ?> <span uk-icon="location"></span></p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <hr />
+                            <nav class="uk-navbar-container uk-navbar-transparent uk-visible@s">
+                                <div class="uk-container">
+                                    <div uk-navbar>
+                                        <div class="uk-navbar-left">
+                                            <ul class="uk-navbar-nav">
+                                                <li><a><?php echo date('Y') ?> © TODOS OS DIREITOS RESERVADOS</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="uk-navbar-right uk-visible@s">
+                                            <ul class="uk-navbar-nav">
+                                                <li><a uk-totop uk-scroll></a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </nav>
+                        </footer>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php
+        echo $this->headScript()
+                ->prependFile($this->baseUrl('public/modules/application/js/contact.js'))
+                ->prependFile($this->baseUrl('public/library/moment/default-locales.js'))
+                ->prependFile($this->baseUrl('public/library/moment/default.js'))
+                ->prependFile($this->baseUrl('public/library/mask/js/jquery.mask.js'))
+                ->prependFile($this->baseUrl('public/library/instafeed/script.js'))
+                ->prependFile($this->baseUrl('public/library/getuikit/js/uikit.icon.min.js'))
+                ->prependFile($this->baseUrl('public/library/getuikit/js/uikit.min.js'))
+                ->prependFile($this->baseUrl('public/library/semantic/semantic.min.js'))
+                ->prependFile($this->baseUrl('public/library/url/url.min.js'))
+                ->prependFile($this->baseUrl('public/config/base_url.js'))
+                ->prependFile($this->baseUrl('public/library/jquery/jquery.js'));
+        ?>
+
+        <!-- BEGIN ONCONTROL CODE -->
+        <script src="https://onds.com.br/public/modules/widget/js/form.leads.js" id="script-form-lead" on-id="29" on-form="14" type="text/javascript"></script>
+        <!-- END ONCONTROL CODE -->
+    </body>
+</html>

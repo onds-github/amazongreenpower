@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="column">
+        <div class="ui breadcrumb">
+            <a class="section" href="/account/dashboard">Início</a>
+            <div class="divider"> / </div>
+            <div class="active section"><?php echo $this->title_page ?></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="ui segment">
+            <table class="ui celled selectable table" id="onTableMenuGroup">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Nome</th>
+                        <th>Slug</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalCreate">
+    <div class="header">Nova registro</div>
+    <div class="content">
+        <form class="ui equal width form">
+            <div class="fields">
+                <div class="field required">
+                    <label>Nome</label>
+                    <input type="text" name="name_menu_group" placeholder="Informe..." />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Slug</label>
+                    <input type="text" name="slug_menu_group" placeholder="Informe..." />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Cancelar</button>
+        <button class="ui labeled icon primary ok button"><i class="check icon"></i> Salvar</button>
+    </div>
+</div>
+
+<div class="ui small modal" id="onModalUpdate">
+    <div class="header">Atualizar registro</div>
+    <div class="content">
+        <form class="ui equal width form">
+            <div class="fields">
+                <div class="field required">
+                    <label>Nome</label>
+                    <input type="text" name="name_menu_group" placeholder="Informe..." />
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field required">
+                    <label>Slug</label>
+                    <input type="text" name="slug_menu_group" placeholder="Informe..." />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui labeled icon secondary deny button"><i class="close icon"></i> Cancelar</button>
+        <button class="ui labeled icon primary ok button"><i class="check icon"></i> Salvar</button>
+    </div>
+</div>

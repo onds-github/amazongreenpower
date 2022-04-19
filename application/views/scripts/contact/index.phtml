@@ -1,0 +1,77 @@
+<?php 
+
+    Zend_Loader::loadClass("Section");
+    $model = new Section();
+    $contact = $model->selectTable(4)[0];
+
+?>
+
+<div class="hero sub">
+    <div class="container">
+        <div class="hero-title-flex _100">
+            <?php echo $contact['description_short_section'] ?>
+        </div>
+        <div class="margin-20px">
+            <div class="we-are-grid">
+                <div>
+                    <p data-w-id="9f3d21b0-74e0-5142-815a-fa7d335ef2e4" style="opacity:0" class="subhead gray"><?php echo $contact['description_long_section'] ?><strong><br/></strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-w-id="9f3d21b0-74e0-5142-815a-fa7d335ef2e8" style="opacity:0" class="flex-lottie">
+        <a href="#down" data-w-id="9f3d21b0-74e0-5142-815a-fa7d335ef2e9" class="social-icon down w-inline-block">
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+            <div data-w-id="9f3d21b0-74e0-5142-815a-fa7d335ef2eb" data-animation-type="lottie" data-src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/6140714b1d7189d6391ea9fc_icons8-down.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="1.1666666666666667" data-duration="0" class="animation-image _4"></div>
+        </a>
+    </div>
+    <div class="social-wrapper left">
+        <a data-w-id="9f3d21b0-74e0-5142-815a-fa7d335ef2ed" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e584debc11e0c9d4225_facebook.png" loading="lazy" width="20" alt="" class="animation-image"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+        <a data-w-id="9f3d21b0-74e0-5142-815a-fa7d335ef2f0" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e58412b62ca34cd5219_twitter.png" loading="lazy" width="20" alt="" class="animation-image"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+        <a data-w-id="9f3d21b0-74e0-5142-815a-fa7d335ef2f3" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e5874d7a635ad9ecf31_instagram.png" loading="lazy" width="20" alt="" class="animation-image"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+        <a data-w-id="9f3d21b0-74e0-5142-815a-fa7d335ef2f6" style="opacity:0" href="https://twitter.com/" target="_blank" class="social-icon w-inline-block">
+            <img src="https://assets.website-files.com/613f528b6c338d2716ac8cbd/61408e583ff4391b0bc9191c_linkedin.png" loading="lazy" width="20" alt="" class="animation-image _2"/>
+            <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="social-circle"></div>
+        </a>
+    </div>
+</div>
+<div id="down" class="section wf-section">
+    <div class="container">
+        <div class="contact-grid">
+            <div>
+                <div >
+                    <form method="post" class="form-grid">
+                        <input type="text" class="text-field _55px w-input" maxlength="256" name="nickname_contact" data-name="Name" style="opacity:0" placeholder="Name*" data-w-id="2c97a1d5-ebf0-345b-f09d-59bb48390902" id="name" required=""/>
+                        <input type="email" class="text-field w-input" maxlength="256" name="email_contact" data-name="Email" style="opacity:0" placeholder="Email*" data-w-id="2c97a1d5-ebf0-345b-f09d-59bb48390904" id="Email" required=""/>
+                        <input type="number" class="text-field w-input" maxlength="256" name="phone_primary_contact" data-name="Phone" style="opacity:0" placeholder="Phone Number" data-w-id="2c97a1d5-ebf0-345b-f09d-59bb48390905" id="Phone"/>
+                        <textarea class="text-field area w-input" maxlength="5000" name="observation_contact" data-name="Project" style="opacity:0" placeholder="Project Details*" data-w-id="2c97a1d5-ebf0-345b-f09d-59bb48390907" id="Project" required=""></textarea>
+                        <div data-w-id="2c97a1d5-ebf0-345b-f09d-59bb48390908" style="opacity:0">
+                            <input type="submit" value="Send Proposal" data-wait="Please wait..." class="button yellow full w-button"/>
+                        </div>
+                    </form>
+                    <div class="success-message w-form-done">
+                        <div>Thank you! Your submission has been received!</div>
+                    </div>
+                    <div class="error-message w-form-fail">
+                        <div>Oops! Something went wrong while submitting the form.</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="photo-animation right">
+                    <img src="<?php echo $contact['image_section'] ?>" loading="lazy" alt="" class="photo"/>
+                    <div class="absolute-background"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

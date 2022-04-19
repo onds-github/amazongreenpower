@@ -1,0 +1,278 @@
+<?php echo $this->doctype('HTML5') ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR">
+    <head>
+        <?php
+        echo $this->headTitle($this->title_page);
+
+        echo $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1')
+                ->setHttpEquiv('Content-Type', 'text/html;charset=UTF-8')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+                ->appendHttpEquiv('language', 'pt-BR')
+                ->appendName('robots', 'noindex, nofollow');
+
+        echo $this->headLink()
+                ->appendStylesheet($this->baseUrl('public/modules/default/css/default.css'))
+                ->appendStylesheet($this->baseUrl('public/library/contextmenu/default.css'))
+                ->appendStylesheet('/public/assets/datatables/dataTables.semantic.min.css')
+                ->appendStylesheet('/public/assets/datatables/dataTables.select.min.css')
+                ->appendStylesheet('/public/assets/datatables/dataTables.buttons.min.css')
+                ->prependStylesheet('/public/assets/uikit/css/uikit.min.css')
+                ->prependStylesheet('/public/assets/semantic/semantic.min.css');
+        ?>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+        <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet" />
+
+    </head>
+    <body>
+
+        <div id="offcanvas-push-left" uk-offcanvas="mode: push; overlay: true;" class="uk-offcanvas">
+            <div class="uk-offcanvas-bar uk-background-secondary">
+                <button class="uk-offcanvas-close uk-close uk-icon" type="button" uk-close></button>
+
+                <div class="uk-padding-small uk-text-center">
+                    <img class="uk-width-2-3" src="<?php echo $this->baseUrl('public/modules/default/img/brand/logotipo.png') ?>" alt="Logotipo" />                           
+                </div>
+                <div class="uk-padding-small">
+                    <div class="ui secondary vertical fluid menu">
+                        <div class="header item">Menu principal</div>
+                        <a class="<?php echo ($this->id_module == 0 ? 'active' : '') ?> item" href="/account/dashboard"><span class="material-icons">dashboard</span> Visão Gerencial</a>
+                        <a class="<?php echo ($this->id_module == 1 ? 'active' : '') ?> item" href="/account/contact"><span class="material-icons">group</span> Clientes &amp; Fornecedores</a>
+                        <a class="<?php echo ($this->id_module == 2 ? 'active' : '') ?> item" href="/finance/order-in"><span class="material-icons">add_circle_outline</span> Receitas</a>
+                        <a class="<?php echo ($this->id_module == 3 ? 'active' : '') ?> item" href="/finance/order-out"><span class="material-icons">remove_circle_outline</span> Despesas</a>
+                        <a class="<?php echo ($this->id_module == 4 ? 'active' : '') ?> item" href="/finance/cashier"><span class="material-icons">attach_money</span> Caixa</a>
+                        <a class="<?php echo ($this->id_module == 5 ? 'active' : '') ?> item" href="/finance/transfer"><span class="material-icons">price_change</span> Transferências</a>
+                        <a class="<?php echo ($this->id_module == 7 ? 'active' : '') ?> item" href="/finance/report/extract"><span class="material-icons">list_alt</span> Extrato</a>
+                        <a class="<?php echo ($this->id_module == 6 ? 'active' : '') ?> item" href="/account/company"><span class="material-icons">business</span> Config. da Empresa</a>
+                        
+                        <?php if (Zend_Auth::getInstance()->getIdentity()->role_admin) : ?>
+                            <div class="header item">Acesso restrito</div>
+                            <a class="<?php echo ($this->id_module == 99 ? 'active' : '') ?> item" href="/admin/company"><span class="material-icons">admin_panel_settings</span> Config. do Sistema</a>
+                        <?php endif; ?>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true; flip: true" class="uk-offcanvas">
+            <div class="uk-offcanvas-bar uk-background-secondary">
+                <button class="uk-offcanvas-close uk-close uk-icon" type="button" uk-close></button>
+
+                <div class="ui secondary vertical fluid menu">
+                    <div class="header item">Config. da Conta</div>
+                    <a class="<?php echo ($this->title_page == 'Info. da Conta' ? 'active' : '') ?> item" href="/account/user">
+                        <span class="material-icons">badge</span> Info. da Conta
+                    </a>
+
+                    <div class="header item">Config. da Empresa</div>
+<!--                    <a class="<?php echo ($this->title_page == 'Info. da Empresa' ? 'active' : '') ?> item" href="/account/company">
+                        <span class="material-icons">info</span> Info. da Empresa
+                    </a>-->
+                    <a class="<?php echo ($this->title_page == 'Contas' ? 'active' : '') ?> item" href="/settings/account">
+                        <span class="material-icons">account_balance_wallet</span> Contas
+                    </a>
+                    <a class="<?php echo ($this->title_page == 'Plano de Contas' ? 'active' : '') ?> item" href="/settings/chart-accounts">
+                        <span class="material-icons">account_tree</span> Plano de Contas
+                    </a>
+                    <a class="<?php echo ($this->title_page == 'Centro de Custos' ? 'active' : '') ?> item" href="/settings/cost-center">
+                        <span class="material-icons">snippet_folder</span> Centro de Custos
+                    </a>
+                    <a class="<?php echo ($this->title_page == 'Controle de Usuários' ? 'active' : '') ?> item" href="/settings/users">
+                        <span class="material-icons">supervisor_account</span> Controle de Usuários
+                    </a>
+
+                    <div class="header item">Outros</div>
+                    <a class="item" href="/account/access/out"><span class="material-icons">logout</span> Encerrar Sessão</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-grid-collapse" uk-grid>
+            
+            <div class="uk-width-small uk-background-secondary uk-visible@m" uk-height-viewport>
+                <div class="uk-padding-small uk-text-center">
+                    <img class="uk-width-1-1" src="<?php echo $this->baseUrl('public/modules/default/img/brand/logotipo.png') ?>" alt="Logotipo" />                           
+                </div>
+                <div class="uk-padding-small uk-text-center">
+                    <div class="ui secondary vertical fluid menu">
+                        <a class="<?php echo ($this->id_module == 0 ? 'active' : '') ?> item" href="/account/dashboard">
+                            <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/ffffff/dashboard-layout.png"/>
+                            <p>Visão Gerencial</p>
+                        </a>
+                        <a class="<?php echo ($this->id_module == 1 ? 'active' : '') ?> item" href="/account/contact">
+                            <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/ffffff/commercial-development-management.png"/>
+                            <p>Clientes & Fornecedores</p>
+                        </a>
+                        <a class="<?php echo ($this->id_module == 2 ? 'active' : '') ?> item" href="/finance/order-in">
+                            <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/ffffff/add.png"/>
+                            <p>Receitas</p>
+                        </a>
+                        <a class="<?php echo ($this->id_module == 3 ? 'active' : '') ?> item" href="/finance/order-out">
+                            <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/ffffff/minus-sign.png"/>
+                            <p>Despesas</p>
+                        </a>
+                        <a class="<?php echo ($this->id_module == 4 ? 'active' : '') ?> item" href="/finance/cashier">
+                            <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/ffffff/old-cash-register.png"/>
+                            <p>Caixa</p>
+                        </a>
+                        <a class="<?php echo ($this->id_module == 5 ? 'active' : '') ?> item" href="/finance/transfer">
+                            <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/ffffff/online-money-transfer.png"/>
+                            <p>Transferências</p>
+                        </a>
+                        <a class="<?php echo ($this->id_module == 7 ? 'active' : '') ?> item" href="/finance/report/extract">
+                            <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/ffffff/exchange.png"/>
+                            <p>Extrato</p>
+                        </a>
+                        <a class="<?php echo ($this->id_module == 6 ? 'active' : '') ?> item" href="/account/company">
+                            <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/ffffff/new-company.png"/>
+                            <p>Config. da Empresa</p>
+                        </a>
+                        
+                        
+                        <?php
+//                        foreach (json_decode(Zend_Auth::getInstance()->getIdentity()->modules, true) as $value) {
+//                            echo '<a class="' . ($value['id_module'] == $this->id_module ? 'active' : '') . ' item" href="' . $value['url_module'] . '"><span class="material-icons">' . $value['icon_module'] . '</span> ' . $value['name_module'] . '</a>';
+//                        }
+                        ?>
+                        <?php if (Zend_Auth::getInstance()->getIdentity()->role_admin) : ?>
+                            <a class="<?php echo ($this->id_module == 99 ? 'active' : '') ?> item" href="/admin/company">
+                                <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/ffffff/installing-updates.png"/>
+                                <p>Config. do Sistema</p>
+                            </a>
+                        <?php endif; ?>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="uk-width-expand@s uk-background-muted">
+
+                <nav class="uk-navbar-container uk-navbar-transparent uk-background-primary uk-light" uk-navbar>
+                    <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                            <li class="uk-hidden@m">
+                                <a>
+                                    <button class="ui icon circular primary button" type="button" uk-toggle="target: #offcanvas-push-left">
+                                        <span class="material-icons">menu</span>
+                                    </button>
+                                </a>
+                            </li>
+                            <li class="uk-visible@m">
+                                <a>
+                                    <div>
+                                        <?php echo $this->title_page ?>
+                                        <div class="uk-navbar-subtitle">
+                                            <?php echo $this->description_page ?>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <ul class="uk-navbar-nav">
+                            <li>
+                                <a>
+                                    <script data-b24-form="click/5/ct417q" data-skip-moving="true">
+                                        (function (w, d, u) {
+                                            var s = d.createElement('script');
+                                            s.async = true;
+                                            s.src = u + '?' + (Date.now() / 180000 | 0);
+                                            var h = d.getElementsByTagName('script')[0];
+                                            h.parentNode.insertBefore(s, h);
+                                        })(window, document, 'https://cdn.bitrix24.com.br/b18050807/crm/form/loader_5.js');
+                                    </script>
+                                    <button class="ui icon circular primary button" uk-tooltip="title: Canal exclusivo para suporte técnico referente ao sistema.">
+                                        <i class="help icon"></i>
+                                    </button>
+                                </a>
+                            </li>
+                            <li class="uk-visible@s">
+                                <a>
+                                    <!--<img class="uk-border-circle uk-margin-right" src="<?php echo Zend_Auth::getInstance()->getIdentity()->image_user ?>" alt="Image profile" width="32" height="32" />-->
+                                    <div>
+                                        <?php echo Zend_Auth::getInstance()->getIdentity()->name_user ?>
+                                        <div class="uk-navbar-subtitle">
+                                            <?php echo Zend_Auth::getInstance()->getIdentity()->email_user ?>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <button class="ui icon circular button" type="button" uk-toggle="target: #offcanvas-push">
+                                        <i class="bars icon"></i>
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="uk-padding-small">
+                    <?php echo $this->layout()->content; ?>
+                </div>
+            </div>
+        </div>
+
+
+        <?php
+        echo $this->headScript()
+                ->prependFile('https://blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-ui.js')
+                ->prependFile('https://blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-validate.js')
+                ->prependFile('https://blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload-process.js')
+                ->prependFile('https://blueimp.github.io/jQuery-File-Upload/js/jquery.fileupload.js')
+                ->prependFile('https://blueimp.github.io/jQuery-File-Upload/js/jquery.iframe-transport.js')
+                
+                ->prependFile('https://blueimp.github.io/jQuery-File-Upload/js/vendor/jquery.ui.widget.js')
+                
+                ->prependFile('https://blueimp.github.io/jQuery-File-Upload/js/vendor/doka.min.js')
+                ->prependFile('https://blueimp.github.io/jQuery-File-Upload/js/vendor/doka.polyfill.loader.js')
+                
+                ->prependFile('/public/library/numeral/pt-br.js')
+                ->prependFile('/public/library/numeral/script.js')
+                ->prependFile('/public/library/moment/default-locales.js')
+                ->prependFile('/public/library/moment/default.js')
+                ->prependFile('/public/library/contextmenu/default.js')
+                
+                
+                ->appendFile('https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js')
+                
+                
+                ->prependFile('/public/assets/datatables/dataTables.jszip.min.js')
+                ->prependFile('/public/assets/datatables/dataTables.vfs_fonts.min.js')
+                ->prependFile('/public/assets/datatables/dataTables.pdfmake.min.js')
+                
+                ->prependFile('/public/assets/datatables/dataTables.buttons.colVis.min.js')
+                ->prependFile('/public/assets/datatables/dataTables.buttons.html5.min.js')
+                ->prependFile('/public/assets/datatables/dataTables.buttons.min.js')
+                ->prependFile('/public/assets/datatables/dataTables.select.min.js')
+                ->prependFile('/public/assets/datatables/dataTables.rowgroup.min.js')
+                
+                
+                ->prependFile('/public/assets/datatables/dataTables.sorting.min.js')
+                ->prependFile('/public/assets/datatables/dataTables.semantic.min.js')
+                ->prependFile('/public/assets/datatables/dataTables.default.min.js')
+                
+                ->prependFile('/public/assets/uikit/js/uikit-icons.min.js')
+                ->prependFile('/public/assets/uikit/js/uikit.min.js')
+                ->prependFile('/public/assets/semantic/semantic.min.js')
+                ->prependFile('/public/config/default.js')
+                ->prependFile('/public/library/mask/jquery.mask.min.js')
+                ->prependFile('/public/library/jquery/jquery.min.js');
+        ?>
+        <script src="https://unpkg.com/filepond-plugin-image-crop/dist/filepond-plugin-image-crop.js"></script>
+        <script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
+
+        <script src="https://unpkg.com/jquery-filepond/filepond.jquery.js"></script>
+
+
+        <script type="text/javascript" src="/public/assets/js/script.analytics.js"></script>
+        <script type="text/javascript">
+            on._tracking();
+        </script>
+
+    </body>
+</html>
